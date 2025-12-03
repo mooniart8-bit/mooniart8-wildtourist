@@ -1,6 +1,6 @@
 yaml
 site_name: Мои Гайды
-site_url: https://ВАШ_НИК.github.io/
+site_url: https://mooniart8-bit.github.io/
 theme:
   name: material
   language: ru
@@ -9,7 +9,7 @@ theme:
     - navigation.sections
     - navigation.expand
   palette:
-    scheme: slate # Темная тема (для тавернщиков самое то)
+    scheme: slate # Темная тема
     primary: purple
 
 nav:
