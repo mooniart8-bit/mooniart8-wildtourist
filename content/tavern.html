@@ -1,1 +1,169 @@
+<div class="tavern-section">
+    <h1>ОШИБКИ ТАВЕРНЫ</h1>
+    <p>Далее разбираем все ошибки которые на данный момент нам встречались. Всегда, когда происходит ошибка, смотрите в консоль и сверяйтесь с данными.</p>
+
+    <section id="connection-error">
+        <h2>Ошибка подключения</h2>
+        <p>Чаще всего это связано с тем, что Google не нравится ваше соединение/впн/днс сервер.</p>
+        <div class="images-row">
+            <img src="media/image5.png" alt="Ошибка подключения 1">
+            <img src="media/image6.png" alt="Ошибка подключения 2">
+        </div>
+        <p><strong>!ВАЖНО! Мы не знаем какие рабочие днс, а какие же нет.</strong> Часто проскальзывала информация, что один может как упасть, так и снова заработать. Имейте это в виду! Также мы не можем вам конкретно дать рабочий впн/днс сервер. У каждого из вас уникальный интернет провайдер и геолокация.</p>
+    </section>
+
+    <section id="cancel-request">
+        <h2>Ошибка «отмена запроса»</h2>
+        <p>Должен помочь рерол, проверьте связь с Google Ai Studio.</p>
+        <img src="media/image7.png" alt="Отмена запроса">
+    </section>
+
+    <section id="limit-50">
+        <h2>Ошибка квоты (Лимит 50 сообщений)</h2>
+        <p>Истрачен лимит в 50 сообщений. Меняете/создаете ключ или ждите обновления в полночь по тихоокеанскому времени (11 часов утра по МСК).</p>
+        <img src="media/image8.png" alt="Лимит 50 сообщений">
+    </section>
+
+    <section id="too-many-requests">
+        <h2>Ошибка «Много запросов»</h2>
+        <p>Слишком много запросов в минуту. Подождите пару минут и только после пишите/реролите.</p>
+        <div class="images-row">
+            <img src="media/image9.png" alt="Много запросов 1">
+            <img src="media/image10.png" alt="Много запросов 2">
+        </div>
+    </section>
+
+    <section id="quota-errors">
+        <h2>Ошибка квоты в 125к и 3млн</h2>
+        <p>Как выглядит:</p>
+        <img src="media/image11.png" alt="Ошибка квоты">
+        
+        <p><strong>Что делать?</strong> Необходимо сделать «Краткий пересказ» (суммарайз, саммари) и скрыть сообщения.</p>
+        <p><strong>Важный момент!</strong> Скрытые сообщения будут отображаться в чате, они никуда не денутся из чата!</p>
+        
+        <p>Как это выглядит? В чате есть сообщения, но рядом с ником бота и вашего персонажа будет призрак. В истории чата тоже все сохранится.</p>
+        <img src="media/image12.png" alt="Призрачные сообщения">
+
+        <h3>Инструкция по пересказу:</h3>
+        <p>Для начала необходимо сделать «краткий пересказ» чата. СДЕЛАТЬ ВСЕ ТАК, КАК НА СКРИНАХ!</p>
+        <p>Также можете переключить модель на gemini 2.0 flash в настройках подключения, эта модель быстрее справляется с пересказом! НО ЕСЛИ БУДЕТ ПИСАТЬ БРЕД НЕ ПО ВАШЕЙ РОЛЕВОЙ, ТО ОБРАТНО ПОМЕНЯЙТЕ НА GEMINI 2.5 PRO.</p>
+        
+        <div class="images-row">
+            <img src="media/image13.png" alt="Настройка пересказа 1">
+            <img src="media/image14.png" alt="Настройка пересказа 2">
+            <img src="media/image15.png" alt="Настройка пересказа 3">
+        </div>
+
+        <p><strong>ПРОМПТЫ ДЛЯ ПЕРЕСКАЗА:</strong> <a href="https://docs.google.com/document/d/1idrFi0xF6CggHcbFEYCIu7vhPkZ1Agsy/edit?usp=drive_link&ouid=108824930578982811907&rtpof=true&sd=true" target="_blank">Скачать промпты</a></p>
+        
+        <h3>Команды скрытия:</h3>
+        <img src="media/image16.png" alt="Текущий пересказ">
+        <p>Если в «текущем пересказе» появился краткий пересказ, прописывайте команду de>/hide 1-50</code> (число зависит от длины чата).</p>
+        <img src="media/image17.png" alt="Команда hide">
+        
+        <div class="tip-box">
+            <p>Команда de>/unhide</code> откроет все ваши сообщения, если это будет необходимо.</p>
+        </div>
+    </section>
+
+    <section id="quota-3m">
+        <h2>Ошибка квоты 3 млн</h2>
+        <p>Вы истратили ежедневный лимит. Ждать обновления лимита в полночь по тихоокеанскому времени (11 часов утра по МСК) или <a href="https://t.me/Trigger_Tourist/370">меняйте ключ</a>.</p>
+        <img src="media/image21.png" alt="Квота 3млн">
+    </section>
+
+    <section id="censorship-tavern">
+        <h2>Ошибка «цензура!»</h2>
+        <p>Если у вас не стоит специальный пресет, будет вылезать такая ошибка. Помогает рерол или установка пресета.</p>
+        <div class="images-row">
+            <img src="media/image22.jpeg" alt="Цензура 1">
+            <img src="media/image23.png" alt="Цензура 2">
+        </div>
+        <p>Также проверьте не включен ли системный промпт!</p>
+        <img src="media/image24.png" alt="Системный промпт">
+    </section>
+
+    <section id="empty-message">
+        <h2>Ошибка «пустое сообщение»</h2>
+        <p>Бот присылает пустой блок. Проверьте, не включен ли стриминг текста — ОН НЕ ДОЛЖЕН БЫТЬ ВКЛЮЧЕН!</p>
+        <div class="images-row">
+            <img src="media/image25.png" alt="Пустое сообщение">
+            <img src="media/image26.png" alt="Настройки стриминга 1">
+            <img src="media/image27.png" alt="Настройки стриминга 2">
+        </div>
+    </section>
+
+    <section id="cut-message">
+        <h2>Ошибка «обрываются сообщения»</h2>
+        <p>Текст не дописывается. Нужно увеличить макс. длину ответа в настройках.</p>
+        <div class="images-row">
+            <img src="media/image28.png" alt="Обрыв сообщения">
+            <img src="media/image29.png" alt="Настройка длины">
+        </div>
+    </section>
+
+    <section id="invalid-key">
+        <h2>Ошибка «неверный ключ»</h2>
+        <p>Ваш API ключ недействителен или неправильно вписан.</p>
+        <div class="images-row">
+            <img src="media/image30.png" alt="Неверный ключ 1">
+            <img src="media/image31.png" alt="Неверный ключ 2">
+        </div>
+        <p>Если используете официальный ключ Google AI Studio, проверьте статус на сайте (UNAVAILABLE означает бан).</p>
+        <img src="media/image33.png" alt="Статус ключа">
+    </section>
+
+    <section id="proxy-quota">
+        <h2>Ошибка квоты прокси</h2>
+        <p>Истрачен ежедневный лимит квоты вашего прокси.</p>
+        <div class="images-row">
+            <img src="media/image34.png" alt="Квота прокси 1">
+            <img src="media/image35.png" alt="Квота прокси 2">
+        </div>
+    </section>
+
+    <section id="tavern-wont-load">
+        <h2>Ошибка «Не грузится Таверна»</h2>
+        <p>Это значит, что она уже запущена в другой сессии или консоль занята.</p>
+        <div class="images-row">
+            <img src="media/image42.png" alt="Ошибка загрузки" style="max-width: 200px;">
+            <img src="media/image43.png" alt="Сессии Termux" style="max-width: 300px;">
+        </div>
+        <p><strong>Решение для ПК:</strong> В файле "config.yaml" поменять de>port: 8000</code> на de>8001</code>.</p>
+        <p><strong>Решение для Android:</strong> Закрыть лишние сессии в Termux через уведомления (кнопка EXIT).</p>
+    </section>
+
+    <section id="error-503">
+        <h2>Ошибка 503 (Перегруз сервера)</h2>
+        <p>Gemini "лег поспать". Остается только ждать.</p>
+        <img src="media/image47.png" alt="Ошибка 503">
+    </section>
+
+    <section id="preset-error">
+        <h2>Ошибка «Не импортируется пресет»</h2>
+        <p>Вы пытаетесь импортировать его не в том меню. Сверьтесь со скриншотом.</p>
+        <div class="images-row">
+            <img src="media/image55.png" alt="Импорт пресета 1">
+            <img src="media/image56.png" alt="Импорт пресета 2">
+        </div>
+    </section>
+
+    <section id="econnreset">
+        <h2>Ошибки ECONNRESET и ETIMEDOUT (Прокси)</h2>
+        <p>Проблемы со связью с сервером прокси.</p>
+        <ul>
+            <li>Отключите VPN/DNS (для прокси они часто не нужны).</li>
+            <li>Проверьте сеть.</li>
+            <li>Если бесплатный прокси — скорее всего он упал или закрылся.</li>
+        </ul>
+        <img src="media/image52.png" alt="Ошибка прокси">
+    </section>
+
+    <section id="bot-writes-for-user">
+        <h2>БОТ ПИШЕТ ЗА ВАС!</h2>
+        <p>Копируете промпт и вставляете его в стандартные заметки автора!</p>
+        <p><a href="https://docs.google.com/document/d/1uX3bdNaqkje6xx562KmTiWEEjyh5ujRE/edit?usp=drive_link&ouid=108824930578982811907&rtpof=true&sd=true" target="_blank">ПРОМПТ ЧТОБЫ БОТ НЕ ПИСАЛ ЗА ВАС</a></p>
+        <img src="media/image62.png" alt="Настройка заметок автора">
+    </section>
+</div>
 
