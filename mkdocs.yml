@@ -9,7 +9,7 @@ theme:
     - navigation.sections
     - navigation.expand
   palette:
-    scheme: slate # Темная тема (для тавернщиков самое то)
+    scheme: slate # Темная тема
     primary: purple
 
 nav:
