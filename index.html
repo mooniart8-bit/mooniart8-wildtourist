@@ -1,0 +1,83 @@
+html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои Гайды</title>
+    <style>
+        /* --- ЭТО СТИЛИ (Дизайн) --- */
+        body {
+            font-family: sans-serif;
+            background-color: #1a1a1a; /* Темный фон */
+            color: #e0e0e0; /* Светлый текст */
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+        /* Боковое меню */
+        .sidebar {
+            width: 250px;
+            background-color: #252525;
+            padding: 20px;
+            border-right: 1px solid #333;
+            flex-shrink: 0; /* Чтобы меню не сжималось */
+        }
+        .sidebar h2 { color: #bb86fc; } /* Фиолетовый заголовок */
+        .sidebar a {
+            display: block;
+            color: #adadad;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: 0.3s;
+        }
+        .sidebar a:hover { color: #fff; padding-left: 5px; }
+        
+        /* Основной контент */
+        .content {
+            padding: 40px;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        .content h1 { color: #bb86fc; border-bottom: 2px solid #333; padding-bottom: 10px; }
+        .content h2 { color: #03dac6; margin-top: 30px; }
+        code { background-color: #333; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+        
+        /* Для мобильных */
+        @media (max-width: 700px) {
+            body { flex-direction: column; }
+            .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #333; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- МЕНЮ (Левая колонка) -->
+    <div class="sidebar">
+        <h2>Навигация</h2>
+        <a href="index.html">🏠 Главная</a>
+        <br>
+        <strong>Tavern</strong>
+        <a href="tavern_install.html">📄 Установка</a>
+        <a href="tavern_prompts.html">📄 Промпты</a>
+        <br>
+        <strong>Janitor</strong>
+        <a href="janitor_guide.html">📄 Гайд по Джанитору</a>
+    </div>
+
+    <!-- ТЕКСТ СТРАНИЦЫ (Правая колонка) -->
+    <div class="content">
+        <h1>Добро пожаловать в мои гайды</h1>
+        <p>Здесь я собираю полезную информацию по нейросетям.</p>
+        
+        <h2>О чем этот сайт?</h2>
+        <p>В основном про ролеплей, <code>SillyTavern</code> и другие интересные штуки.</p>
+        
+        <p>Выберите раздел в меню слева, чтобы начать чтение.</p>
+        
+        <hr style="border: 0; border-top: 1px solid #333; margin: 40px 0;">
+        <p><i>Сайт создан с помощью HTML.</i></p>
+    </div>
+
+</body>
+</html>
