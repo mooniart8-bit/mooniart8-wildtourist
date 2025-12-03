@@ -1,4 +1,4 @@
-yaml
+```yaml
 site_name: Мои Гайды
 site_url: https://mooniart8-bit.github.io/
 theme:
@@ -20,3 +20,4 @@ nav:
   - Janitor:
       - 'Основы': janitor/basics.md
       - 'Jailbreak': janitor/jb.md
+```
