@@ -1,4 +1,4 @@
-```yaml
+yaml
 name: ci
 on:
   push:
@@ -24,4 +24,3 @@ jobs:
             mkdocs-material-
       - run: pip install mkdocs-material 
       - run: mkdocs gh-deploy --force
-```
