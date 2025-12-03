@@ -1,4 +1,4 @@
-```yaml
+yaml
 site_name: Мои Гайды
 site_url: https://ВАШ_НИК.github.io/
 theme:
@@ -20,4 +20,3 @@ nav:
   - Janitor:
       - 'Основы': janitor/basics.md
       - 'Jailbreak': janitor/jb.md
-```
