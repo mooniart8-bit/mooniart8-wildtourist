@@ -1,1 +1,57 @@
+<div class="electron-section">
+    <h1>ELECTRONHUB.AI ОШИБКИ</h1>
+
+    <section id="official-errors">
+        <h2>Официальные коды ошибок</h2>
+        <ul>
+            <li><strong>401:</strong> Неверный ключ / истек срок / бан.</li>
+            <li><strong>429:</strong> Слишком много запросов (подождите).</li>
+            <li><strong>400:</strong> Неверная модель или запрещенный контент.</li>
+            <li><strong>402:</strong> Требуется оплата (недостаточно кредитов).</li>
+            <li><strong>500/503:</strong> Ошибка сервера (ждите).</li>
+        </ul>
+    </section>
+
+    <section id="context-error">
+        <h2>Ошибка контекста</h2>
+        <p>Вы не указали правильный размер контекста для модели. Сверяйтесь с официальным сайтом (например, для DeepSeek v3.1 контекст 64к).</p>
+        <div class="images-row">
+            <img src="media/image89.png" alt="Ошибка контекста 1">
+            <img src="media/image90.png" alt="Ошибка контекста 2">
+        </div>
+        
+        <h3>Настройка в JanitorAI:</h3>
+        <img src="media/image94.png" alt="Настройка Janitor" style="max-width: 300px;">
+        
+        <h3>Настройка в SillyTavern:</h3>
+        <p>Нужно рассчитать контекст и макс. длину ответа. Макс. длина + Контекст должны укладываться в лимит модели.</p>
+        <img src="media/image95.png" alt="Настройка SillyTavern">
+    </section>
+
+    <section id="error-405">
+        <h2>Ошибка 405 «Method Not Allowed»</h2>
+        <p>Неправильно написана модель или URL прокси.</p>
+        <p><strong>Правильные URL:</strong></p>
+        <ul>
+            <li>de>https://api.electronhub.ai/v1/chat/completions</code></li>
+            <li>de>https://api.electronhub.ai/chat/completions</code></li>
+        </ul>
+        <div class="images-row">
+            <img src="media/image96.png" alt="Ошибка 405">
+            <img src="media/image97.png" alt="Пример ошибки" style="max-width: 400px;">
+        </div>
+    </section>
+
+    <section id="max-accounts">
+        <h2>Ошибка «Максимум 3 аккаунта»</h2>
+        <p>Даже с одним аккаунтом использование публичного VPN может привести к этой ошибке (совпадение IP). Смените сервер.</p>
+        <img src="media/image100.png" alt="Ошибка 3 аккаунта">
+    </section>
+
+    <section id="quota-ads">
+        <h2>Ошибка «закончилась квота, посмотрите рекламу»</h2>
+        <p>Пока не рекомендуется просматривать рекламу (возможны баги и баны). Если забанили — пишите тикет в их Discord.</p>
+        <img src="media/image101.png" alt="Ошибка рекламы">
+    </section>
+</div>
 
