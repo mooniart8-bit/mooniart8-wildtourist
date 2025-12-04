@@ -1,15 +1,18 @@
+html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Гайд по ошибкам</title>
-    <!-- Убедитесь, что файл называется style.css и лежит рядом -->
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- ИСПРАВЛЕННАЯ СТРОКА: теперь ищем файл в папке css -->
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
 
-    <!-- БОКОВОЕ МЕНЮ -->
+    <!-- МЕНЮ -->
     <nav class="sidebar navigation">
         <div class="logo">
             <div class="star-icon"></div>
@@ -18,11 +21,7 @@
 
         <div class="nav-section">
             <div class="nav-title">Меню</div>
-            
-            <!-- Ссылка на оглавление -->
             <a href="#toc" class="nav-link" data-content="toc">📑 Оглавление</a>
-            
-            <!-- Основные ссылки -->
             <a href="#intro" class="nav-link" data-content="intro">Введение</a>
             <a href="#base" class="nav-link" data-content="base">База (Консоль)</a>
             <a href="#tavern" class="nav-link" data-content="tavern">Ошибки Таверны</a>
@@ -31,16 +30,18 @@
         </div>
     </nav>
 
-    <!-- СЮДА ЗАГРУЖАЕТСЯ ТЕКСТ -->
+    <!-- ОБЛАСТЬ КОНТЕНТА -->
     <main id="content-area" class="main-content">
-        <!-- Баннер при загрузке -->
         <div class="hero-banner">
             <h1>Загрузка... <div class="star-icon" style="background: white;"></div></h1>
-            <p>Выберите раздел в меню слева.</p>
+            <p>Если текст не появился, нажмите на любой пункт меню слева.</p>
         </div>
     </main>
 
-    <!-- Скрипт -->
+    <!-- СКРИПТ -->
+    <script src="js/app.js"></script>
+</body>
+</html>
     <script src="js/app.js"></script>
 </body>
 </html>
