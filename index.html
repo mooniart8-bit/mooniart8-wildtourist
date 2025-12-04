@@ -1,27 +1,60 @@
+html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гайд по ошибкам в Таверне и Джанитор</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Celestial Guides</title>
+    <!-- Вот эта строка подключает твой красивый дизайн -->
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <div class="container">
-        <nav class="navigation">
-            <h3>Меню</h3>
-            <ul>
-                <li><a href="#intro" data-content="intro">Введение</a></li>
-                <li><a href="#base" data-content="base">База (Консоль)</a></li>
-                <li><a href="#tavern" data-content="tavern">Ошибки Таверны</a></li>
-                <li><a href="#janitorai" data-content="janitorai">Ошибки JanitorAI</a></li>
-                <li><a href="#electronhub" data-content="electronhub">Ошибки ElectronHub.ai</a></li>
-            </ul>
-        </nav>
-        <main id="content-area">
-            <!-- Сюда будет загружаться контент -->
-        </main>
-    </div>
-    <script src="js/app.js"></script>
+
+    <!-- МЕНЮ СЛЕВА -->
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="star-icon"></div>
+            MY GUIDES
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-title">Главное</div>
+            <a href="index.html" class="nav-link active">✨ Домашняя</a>
+            <a href="#" class="nav-link">💬 Обо мне</a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-title">SillyTavern</div>
+            <!-- Ссылки на другие HTML файлы -->
+            <a href="tavern_install.html" class="nav-link">📥 Установка</a>
+            <a href="tavern_prompts.html" class="nav-link">📝 Промпты</a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-title">Janitor</div>
+            <a href="#" class="nav-link">🤖 Основы</a>
+        </div>
+    </aside>
+
+    <!-- ОСНОВНАЯ ЧАСТЬ -->
+    <main class="main-content">
+        
+        <!-- БАННЕР -->
+        <div class="hero-banner">
+            <div class="hero-text">
+                <h1>Добро пожаловать <div class="star-icon" style="background: white;"></div></h1>
+                <p>База знаний по нейросетям, ролеплею и созданию персонажей.</p>
+            </div>
+        </div>
+
+        <!-- КАРТОЧКА -->
+        <div class="content-card">
+            <h2>С чего начать?</h2>
+            <p>В меню слева ты найдешь гайды по установке и настройке.</p>
+            <a href="tavern_install.html" class="btn">Перейти к установке →</a>
+        </div>
+
+    </main>
+
 </body>
 </html>
