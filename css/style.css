@@ -210,3 +210,41 @@ code {
     .hero-banner { padding: 20px; }
     .hero-text h1 { font-size: 24px; }
 }
+css
+/* --- СТИЛИ ДЛЯ ОГЛАВЛЕНИЯ (TOC) --- */
+.toc-list h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    color: var(--accent-purple); /* Фиолетовый заголовок */
+    font-size: 1.2rem;
+}
+
+.toc-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.toc-list li {
+    margin-bottom: 8px;
+}
+
+.toc-list a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 1.05em;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.toc-list a:hover {
+    background-color: white;
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    transform: translateX(5px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
