@@ -6,11 +6,11 @@
         <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
 
         <section id="connection-error" style="margin-bottom: 40px;">
-            <h2>Ошибка подключения</h2>
-            <p>Чаще всего это связано с тем, что Google не нравится ваше соединение/впн/днс сервер.</p>
+            <h2>ERROR 400 | Ошибка подключения</h2>
+            <p>Чаще всего это связано с тем, что Google не нравится ваше соединение/впн/днс сервер. Необходимо найти рабочий впн/днс чтобы была плашка "Работает"</p>
             <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap; margin: 15px 0;">
-                <img src="media/image5.png" alt="Ошибка подключения 1" style="max-width: 48%; border-radius: 8px; border: 1px solid #eee;">
-                <img src="media/image6.png" alt="Ошибка подключения 2" style="max-width: 48%; border-radius: 8px; border: 1px solid #eee;">
+                <img src="media/2_error400_1.png" alt="Ошибка подключения 1" style="max-width: 48%; border-radius: 8px; border: 1px solid #eee;">
+                <img src="media/2_error400_2.png" alt="Ошибка подключения 2" style="max-width: 48%; border-radius: 8px; border: 1px solid #eee;">
             </div>
             <div class="important" style="background: #fff3cd; padding: 15px; border-left: 5px solid #ffc107; border-radius: 5px;">
                 <p style="margin: 0; color: #856404;"><strong>!ВАЖНО! Мы не знаем какие рабочие ДНС, а какие нет.</strong> Часто проскальзывала информация, что один может как упасть, так и снова заработать. Имейте это в виду! Также мы не можем вам конкретно дать рабочий ВПН/ДНС сервер. У каждого из вас уникальный интернет провайдер и геолокация.</p>
@@ -18,32 +18,40 @@
         </section>
 
         <section id="cancel-request" style="margin-bottom: 40px;">
-            <h2>Ошибка «отмена запроса»</h2>
-            <p>Должен помочь рерол, проверьте связь с Google Ai Studio.</p>
-            <img src="media/image7.png" alt="Отмена запроса" style="max-width: 100%; border-radius: 8px;">
+            <h2>ABORTED | Ошибка «отмена запроса»</h2>
+            <p>Проверьте связь с Google Ai Studio. Ошибка связана с тем, что отправляется запрос, но он отменяется из-за ожидания. Помогает обычно рерол</p>
+            <img src="media/3_aborted.png" alt="Отмена запроса" style="max-width: 100%; border-radius: 8px;">
         </section>
 
         <section id="limit-50" style="margin-bottom: 40px;">
-            <h2>Ошибка квоты (Лимит 50 сообщений)</h2>
+            <h2>quotaValue 50 | Ошибка квоты (Лимит 50 сообщений)</h2>
             <p>Истрачен лимит в 50 сообщений. Меняете/создаете ключ или ждите обновления в полночь по тихоокеанскому времени (11 часов утра по МСК).</p>
-            <img src="media/image8.png" alt="Лимит 50 сообщений" style="max-width: 100%; border-radius: 8px;">
+            <img src="media/4_quota50.png" alt="Лимит 50 сообщений" style="max-width: 100%; border-radius: 8px;">
         </section>
 
         <section id="too-many-requests" style="margin-bottom: 40px;">
-            <h2>Ошибка «Много запросов»</h2>
-            <p>Слишком много запросов в минуту. Подождите пару минут и только после пишите/реролите.</p>
+            <h2>Too Many Requests | Ошибка «Много запросов»</h2>
+            <p>Слишком много запросов в минуту. Подождите пару минут и только после делайте повтор генерации/рерольте запрос.</p>
             <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <img src="media/image9.png" alt="Много запросов 1" style="max-width: 48%; border-radius: 8px;">
-                <img src="media/image10.png" alt="Много запросов 2" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/5_to_many_request_1.png" alt="Много запросов 1" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/5_to_many_request_2.png" alt="Много запросов 2" style="max-width: 48%; border-radius: 8px;">
+            </div>
+        </section>
+
+         <section id="quota-value-2" style="margin-bottom: 40px;">
+            <h2>Quota Value 2 | Ошибка «Квота 2»</h2>
+            <p>У ключа лишь 2 запроса в минуту. Подождать пару минут, чтобы сбросилась квота.</p>
+            <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <img src="media/5_to_many_request_3.png" alt="Много запросов 1" style="max-width: 48%; border-radius: 8px;">
             </div>
         </section>
 
         <section id="quota-errors" style="margin-bottom: 40px;">
-            <h2>Ошибка квоты в 125к и 3млн</h2>
+            <h2>Quota Value 125k | Ошибка квоты в 125к</h2>
             <p>Как выглядит:</p>
-            <img src="media/image11.png" alt="Ошибка квоты" style="max-width: 100%; border-radius: 8px;">
+            <img src="media/6_quota125k_1.png" alt="Ошибка квоты" style="max-width: 100%; border-radius: 8px;">
             
-            <p><strong>Что делать?</strong> Необходимо сделать «Краткий пересказ» (суммарайз, саммари) и скрыть сообщения.</p>
+            <p><strong>Что делать?</strong> Есть два варианта.</p>
             
             <div class="warning" style="background: #e2e3ff; padding: 15px; border-left: 5px solid #5d5fef; border-radius: 5px; margin: 15px 0;">
                  <p style="margin: 0;"><strong>Важный момент!</strong> Скрытые сообщения будут отображаться в чате, они никуда не денутся из чата!</p>
