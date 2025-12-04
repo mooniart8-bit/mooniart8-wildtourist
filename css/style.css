@@ -1,314 +1,364 @@
 :root {
     /* ТВОЯ НОВАЯ ПАЛИТРА */
-    --bg-main: #343434;        /* Основной темный фон */
-    --bg-panel: #515151;       /* Фон центральной панели */
-    --card-light: #DCDED0;     /* Светло-бежевый (для текста) */
+    --bg-dark: #242623;        /* Темный графит (Фон) */
+    --accent-blue: #6378A5;    /* Мягкий синий (Акценты) */
+    --accent-light: #98A8C1;   /* Светло-синий (Фон карточек) */
+    --text-grey: #BBBBBB;      /* Серый (Детали) */
+    --text-dark: #6076A8;      /* Темно-синий текст */
+    --white: #FFFFFF;          /* Белый (Текст и плашки) */
     
-    --text-dark: #515153;      /* Темный текст (для светлых карточек) */
-    --text-light: #DCDED0;     /* Светлый текст (для темного фона) */
-    
-    --accent-green: #908E79;   /* Шалфейный зеленый */
-    --accent-green-dark: #7F7C69; /* Темный шалфей (обводки) */
-    --accent-dark-brown: #37342F; /* Очень темный (для меню) */
-    --accent-red: #834645;     /* Приглушенный красный */
+    --connector-color: #6378A5; /* Цвет линий, соединяющих блоки */
 }
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-light);
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--bg-dark);
     display: flex;
     min-height: 100vh;
+    overflow-x: hidden;
     
-    /* Декоративные круги на заднем плане (как на референсе) */
+    /* ФОН: Эффект цифрового кода/матрицы (без картинок, чистый CSS) */
     background-image: 
-        radial-gradient(circle at 10% 20%, #3f3f3f 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, #3f3f3f 0%, transparent 20%);
+        linear-gradient(0deg, transparent 24%, rgba(99, 120, 165, .1) 25%, rgba(99, 120, 165, .1) 26%, transparent 27%, transparent 74%, rgba(99, 120, 165, .1) 75%, rgba(99, 120, 165, .1) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(99, 120, 165, .1) 25%, rgba(99, 120, 165, .1) 26%, transparent 27%, transparent 74%, rgba(99, 120, 165, .1) 75%, rgba(99, 120, 165, .1) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+}
+
+/* Декоративные "Блобы" (Пятна) на фоне, как на референсе */
+body::before {
+    content: '';
+    position: fixed;
+    top: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -10%;
+    left: 20%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, var(--text-dark) 0%, transparent 70%);
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* === МЕНЮ СЛЕВА === */
 .sidebar {
     width: 260px;
-    background-color: var(--accent-dark-brown);
+    /* Полупрозрачный фон (Glassmorphism) */
+    background: rgba(36, 38, 35, 0.95); 
+    backdrop-filter: blur(10px);
     padding: 30px;
     display: flex;
     flex-direction: column;
-    border-right: 4px solid var(--accent-green-dark);
+    border-right: 1px solid rgba(255,255,255,0.1);
     flex-shrink: 0;
     position: fixed;
     height: 100vh;
     overflow-y: auto;
-    z-index: 10;
+    z-index: 100;
 }
 
 .logo {
-    background: var(--card-light);
-    color: var(--accent-dark-brown);
-    padding: 15px;
-    text-align: center;
+    color: var(--white);
     font-weight: 900;
-    font-size: 24px;
-    text-transform: uppercase;
+    font-size: 28px;
     margin-bottom: 40px;
-    border-radius: 20px; /* Сильное скругление */
-    border: 3px solid var(--accent-green);
-    
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 10px;
+    /* Неоновое свечение */
+    text-shadow: 0 0 15px var(--accent-blue);
 }
 
-/* Звездочка */
 .star-icon {
-    width: 18px;
-    height: 18px;
-    background: var(--accent-red);
-    clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
-    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: var(--white);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--white);
 }
+
+.nav-section { margin-bottom: 40px; }
 
 .nav-title {
-    color: var(--accent-green);
-    font-weight: bold;
-    text-transform: uppercase;
+    color: var(--text-grey);
     font-size: 12px;
+    text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 15px;
-    border-bottom: 1px solid var(--accent-green-dark);
-    padding-bottom: 5px;
+    padding-left: 10px;
+    border-left: 2px solid var(--accent-blue);
 }
 
 /* Кнопки меню */
 .nav-link {
     display: block;
     text-decoration: none;
-    color: var(--card-light);
-    padding: 12px 18px;
+    color: var(--white);
+    padding: 12px 20px;
     margin-bottom: 8px;
-    border-radius: 12px;
-    transition: 0.2s;
-    font-weight: 600;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid transparent;
+    border-radius: 20px 5px 20px 5px; /* Асимметричные углы */
+    transition: 0.3s;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .nav-link:hover {
-    background: var(--accent-green);
-    color: var(--bg-main);
-    transform: scale(1.02);
+    background: var(--accent-blue);
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(99, 120, 165, 0.4);
 }
 
 .nav-link.active {
-    background: var(--accent-red);
-    color: var(--card-light);
-    border: 1px solid var(--card-light);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    background: var(--white);
+    color: var(--bg-dark);
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
 /* === ОСНОВНОЙ КОНТЕНТ === */
 .main-content {
-    margin-left: 300px; /* Отступ под меню */
+    margin-left: 260px;
     flex-grow: 1;
-    padding: 40px;
-    max-width: 950px;
-}
-
-/* === ГЛАВНАЯ ПАНЕЛЬ (Темно-серая подложка) === */
-.content-card {
-    background-color: var(--bg-panel); /* #515151 */
-    padding: 40px;
-    border-radius: 30px; /* Большие скругления как на картинке */
-    border: 5px solid var(--accent-green-dark);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    padding: 40px 60px;
+    /* Убираем ограничение ширины, чтобы на ПК было широко */
+    width: 100%; 
+    box-sizing: border-box;
     position: relative;
-    
-    /* Декоративные элементы на фоне панели */
-    background-image: radial-gradient(var(--accent-green-dark) 2px, transparent 2px);
-    background-size: 30px 30px;
 }
 
-/* === ЗАГОЛОВКИ === */
+/* Вертикальная линия, соединяющая блоки (Визуальный поток) */
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 310px; /* Положение линии */
+    width: 4px;
+    height: 100%;
+    background: var(--accent-blue);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* === КАРТОЧКА С КОНТЕНТОМ === */
+.content-card {
+    /* Основной фон карточек - Белый */
+    background-color: var(--white);
+    padding: 50px;
+    border-radius: 40px; /* Очень круглые углы */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    margin-bottom: 60px;
+    position: relative;
+    border: 4px solid var(--accent-light);
+    max-width: 1100px; /* Широкий контент */
+}
+
+/* Декор: "Ушко" или тег сбоку */
+.content-card::before {
+    content: '● ● ●';
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    color: var(--accent-blue);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+/* ЗАГОЛОВОК H1 */
 h1 {
-    /* Стиль "Облачка" */
-    background: var(--card-light);
-    color: var(--text-dark);
-    padding: 20px 30px;
-    border-radius: 20px 20px 20px 0; /* Асимметричное скругление */
-    font-size: 28px;
+    font-size: 36px;
+    color: var(--bg-dark);
     margin-top: 0;
-    margin-bottom: 30px;
-    border: 3px solid var(--accent-green);
-    
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
-}
-
-h2 {
-    /* Стиль зеленой плашки */
+    padding-bottom: 20px;
+    border-bottom: 3px dashed var(--accent-light);
     display: inline-block;
-    background: var(--accent-green);
-    color: var(--card-light); /* Светлый текст */
-    padding: 8px 20px;
-    border-radius: 15px;
-    font-size: 20px;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    border: 2px solid var(--accent-green-dark);
+    position: relative;
+}
+/* Декор: Листик */
+h1::after {
+    content: '🌿';
+    font-size: 24px;
+    position: absolute;
+    top: -10px;
+    right: -40px;
+    transform: rotate(15deg);
 }
 
-h3 {
-    color: var(--accent-red);
-    border-left: 4px solid var(--accent-red);
-    padding-left: 10px;
-    margin-top: 30px;
+/* ЗАГОЛОВОК H2 (Синие блоки) */
+h2 {
+    background: var(--accent-blue);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 0px var(--bg-dark);
+    position: relative;
+}
+/* Декор: Сердечко */
+h2::after {
+    content: '❤';
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-blue);
     font-size: 18px;
 }
 
-/* === ТЕКСТ (В светлых блоках) === */
+h3 {
+    color: var(--text-dark);
+    margin-top: 30px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+h3::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+}
+
+/* Текст */
 p, li {
     font-size: 16px;
-    line-height: 1.6;
-    color: var(--text-dark); /* #515153 */
-    
-    /* Светлая подложка #DCDED0 */
-    background: var(--card-light); 
-    
-    padding: 15px;
-    border-radius: 15px; /* Скругленные блоки текста */
+    line-height: 1.8;
+    color: #444;
+    background: #F4F6F8; /* Очень светло-серый фон для текста */
+    padding: 15px 20px;
+    border-radius: 15px;
     margin-bottom: 15px;
-    border: 1px solid var(--accent-green-dark);
 }
 
-/* Ссылки внутри текста */
-.content-card a {
-    color: var(--accent-red);
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 2px solid var(--accent-red);
-}
-.content-card a:hover {
-    background: var(--accent-red);
-    color: white;
-    padding: 2px 5px;
-    border-radius: 4px;
-}
-
-/* === ОГЛАВЛЕНИЕ === */
+/* === ОГЛАВЛЕНИЕ (Стиль плиток) === */
 .toc-list h2 {
     background: transparent;
-    color: var(--card-light); /* Светлый заголовок на темном фоне */
-    border: none;
+    color: var(--accent-blue);
+    box-shadow: none;
     padding: 0;
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--accent-green);
-    border-radius: 0;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
+.toc-list h2::after { content: none; } /* Убираем сердечко в оглавлении */
 
 .toc-list ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     padding: 0;
 }
 
-.toc-list li { list-style: none; margin: 0; padding: 0; background: none; border: none;}
+.toc-list li { list-style: none; margin: 0; width: calc(50% - 15px); flex-grow: 1; }
 
 .toc-list a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    /* Кнопки оглавления */
-    background: var(--card-light);
-    color: var(--text-dark);
+    display: block;
+    background: var(--accent-light);
+    color: var(--white);
     text-decoration: none;
-    padding: 15px;
-    font-weight: 700;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    transition: 0.2s;
+    padding: 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+    border: 3px solid white;
 }
-.toc-list a::before { content: '✦'; color: var(--accent-red); }
 
 .toc-list a:hover {
-    background: var(--accent-red);
-    color: var(--card-light);
-    border-color: var(--card-light);
-    transform: translateY(-3px);
+    background: var(--accent-blue);
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(99, 120, 165, 0.3);
 }
 
-/* === БЛОКИ ВНИМАНИЯ === */
-/* Important - зеленый стиль */
+/* === ВАЖНЫЕ БЛОКИ === */
 .important {
-    background: var(--accent-green);
-    border: 2px dashed var(--card-light) !important;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 25px 0;
-    color: white;
+    background: var(--white);
+    border: 3px solid var(--accent-blue);
+    border-radius: 25px;
+    padding: 25px;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
 }
-.important p { 
-    background: rgba(255,255,255,0.2); 
-    color: white; 
-    border: none;
+/* Декор фона для блока Important */
+.important::before {
+    content: '✦ ✦ ✦';
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    color: rgba(99, 120, 165, 0.1);
+    font-size: 60px;
+    font-weight: bold;
+    pointer-events: none;
 }
 
-/* Warning - красный стиль */
 .warning {
-    background: var(--accent-red);
-    border: 3px solid var(--card-light) !important;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 25px 0;
-    color: white;
+    background: #FFE4E4; /* Светло-красный */
+    border: 3px solid #FF6B6B;
+    border-radius: 25px;
+    padding: 25px;
+    margin: 30px 0;
+    color: #C0392B;
 }
-.warning p { 
-    background: rgba(255,255,255,0.2); 
-    color: white; 
-    border: none;
-}
+.warning p { background: white; color: #C0392B; }
 
 /* === КАРТИНКИ === */
 img {
-    border-radius: 15px;
-    margin: 15px 0;
-    /* Двойная рамка: Тонкая светлая + Толстая темная */
-    border: 3px solid var(--card-light);
-    outline: 2px solid var(--accent-green-dark);
+    border-radius: 20px;
+    border: 5px solid var(--accent-light);
+    margin: 20px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .images-row {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    background: rgba(0,0,0,0.2); /* Затемнение под картинками */
-    padding: 15px;
+    background: rgba(0,0,0,0.03);
+    padding: 20px;
     border-radius: 20px;
     margin: 20px 0;
 }
 
 /* Баннер загрузки */
 .hero-banner {
-    background: var(--bg-panel);
-    color: var(--card-light);
-    padding: 40px;
+    background: var(--white);
+    padding: 60px;
+    border-radius: 40px;
     text-align: center;
-    border-radius: 30px;
-    border: 3px solid var(--accent-green);
+    border: 4px solid var(--accent-blue);
 }
+.hero-banner h1 { border: none; }
 
 /* Скроллбар */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--bg-main); }
-::-webkit-scrollbar-thumb { background: var(--accent-green); border-radius: 10px; }
+::-webkit-scrollbar { width: 14px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { 
+    background: var(--accent-blue); 
+    border: 4px solid var(--bg-dark); 
+    border-radius: 20px; 
+}
 
-@media (max-width: 768px) {
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 800px) {
     body { flex-direction: column; }
-    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 4px solid var(--accent-green); }
-    .main-content { margin-left: 0; padding: 15px; }
-    .content-card { padding: 20px; border-width: 3px;}
-    .toc-list ul { grid-template-columns: 1fr; }
+    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); background: var(--bg-dark);}
+    .main-content { margin-left: 0; padding: 20px; }
+    .main-content::before { display: none; } /* Убираем линию на телефоне */
+    .content-card { padding: 25px; border-radius: 20px;}
+    .toc-list li { width: 100%; }
 }
