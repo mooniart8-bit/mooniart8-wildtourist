@@ -1,43 +1,38 @@
 :root {
-    /* ПАЛИТРА: Японские волны */
-    --bg-cream: #F4F1EA;       /* Основной фон (Крем) */
-    --wave-dark: #2C4A52;      /* Темная морская волна (Текст, Акценты) */
-    --wave-mid: #537C89;       /* Средний синий */
-    --wave-light: #8DA9B4;     /* Светлый голубой */
-    --accent-sand: #E6D5B8;    /* Песок (для кнопок) */
+    /* ТВОЯ ПАЛИТРА (ВОЗВРАЩЕНА) */
+    --bg-dark: #242623;        /* Основной фон */
+    --bg-card: #2e312d;        /* Фон под текстом (чуть светлее) */
     
-    --text-main: #1a2c32;      /* Очень темный зеленый для текста */
-    --white: #FFFFFF;
+    --accent-blue: #6378A5;    /* Основной синий */
+    --accent-light: #98A8C1;   /* Светло-синий */
+    
+    --text-grey: #BBBBBB;      /* Основной текст */
+    --text-white: #FFFFFF;     /* Заголовки */
+    
+    --border-color: #383b36;   /* Цвет рамок */
 }
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-    background-color: var(--bg-cream);
-    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-grey);
     display: flex;
     min-height: 100vh;
     
-    /* ФОН: Абстрактные волны (CSS паттерн) */
-    background-image: 
-        radial-gradient(circle at 100% 150%, var(--bg-cream) 24%, var(--wave-light) 25%, var(--wave-light) 28%, var(--bg-cream) 29%, var(--bg-cream) 36%, var(--wave-light) 37%, var(--wave-light) 40%, transparent 40%, transparent),
-        radial-gradient(circle at 0    150%, var(--bg-cream) 24%, var(--wave-light) 25%, var(--wave-light) 28%, var(--bg-cream) 29%, var(--bg-cream) 36%, var(--wave-light) 37%, var(--wave-light) 40%, transparent 40%, transparent),
-        radial-gradient(circle at 50%  100%, var(--wave-mid) 10%, var(--bg-cream) 11%, var(--bg-cream) 23%, var(--wave-mid) 24%, var(--wave-mid) 30%, var(--bg-cream) 31%, var(--bg-cream) 43%, var(--wave-mid) 44%, var(--wave-mid) 50%, var(--bg-cream) 51%, var(--bg-cream) 63%, var(--wave-mid) 64%, var(--wave-mid) 71%, transparent 71%, transparent),
-        radial-gradient(circle at 100% 50%, var(--bg-cream) 5%, var(--wave-dark) 6%, var(--wave-dark) 15%, var(--bg-cream) 16%, var(--bg-cream) 20%, var(--wave-dark) 21%, var(--wave-dark) 30%, var(--bg-cream) 31%, var(--bg-cream) 35%, var(--wave-dark) 36%, var(--wave-dark) 45%, transparent 45%, transparent),
-        radial-gradient(circle at 0    50%, var(--bg-cream) 5%, var(--wave-dark) 6%, var(--wave-dark) 15%, var(--bg-cream) 16%, var(--bg-cream) 20%, var(--wave-dark) 21%, var(--wave-dark) 30%, var(--bg-cream) 31%, var(--bg-cream) 35%, var(--wave-dark) 36%, var(--wave-dark) 45%, transparent 45%, transparent);
-    background-size: 100px 50px;
-    background-color: var(--bg-cream);
-    background-attachment: fixed; /* Чтобы фон стоял на месте при прокрутке */
+    /* ФОН: Очень спокойный, темный, без навязчивых узоров */
+    background-image: radial-gradient(circle at top right, #2f332e 0%, transparent 40%);
+    background-attachment: fixed;
 }
 
 /* === МЕНЮ СЛЕВА === */
 .sidebar {
     width: 260px;
-    background-color: var(--wave-dark); /* Темно-синяя панель */
+    background-color: #1e201d; /* Чуть темнее фона */
     padding: 30px;
     display: flex;
     flex-direction: column;
-    box-shadow: 5px 0 30px rgba(0,0,0,0.2); /* Тень на контент */
+    border-right: 1px solid var(--border-color);
     flex-shrink: 0;
     position: fixed;
     height: 100vh;
@@ -46,272 +41,239 @@ body {
 }
 
 .logo {
-    color: var(--bg-cream);
+    color: var(--text-white);
     font-weight: 900;
-    font-size: 26px;
+    font-size: 24px;
     text-transform: uppercase;
     margin-bottom: 40px;
-    letter-spacing: 2px;
-    border-bottom: 2px solid var(--wave-mid);
-    padding-bottom: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
+    letter-spacing: 1px;
 }
 
-/* Иконка в логотипе */
+/* Маленький аккуратный кружок в логотипе */
 .star-icon {
-    width: 15px;
-    height: 15px;
-    background: var(--bg-cream);
-    border-radius: 50%; /* Кружок */
-    box-shadow: 0 0 0 4px var(--wave-mid);
+    width: 10px;
+    height: 10px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-blue);
 }
 
-.nav-section { margin-bottom: 40px; }
+.nav-section { margin-bottom: 30px; }
 
 .nav-title {
-    color: var(--wave-light);
+    color: var(--accent-light);
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 15px;
-    opacity: 0.8;
+    padding-left: 10px;
+    border-left: 2px solid var(--accent-blue);
 }
 
 /* Кнопки меню */
 .nav-link {
     display: block;
     text-decoration: none;
-    color: #cbd5e1;
-    padding: 12px 0;
+    color: var(--text-grey);
+    padding: 10px 15px;
     margin-bottom: 5px;
-    transition: 0.3s;
+    border-radius: 6px;
+    transition: 0.2s;
     font-weight: 500;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .nav-link:hover {
-    color: var(--white);
-    padding-left: 10px; /* Сдвиг вправо при наведении */
-    border-bottom: 1px solid var(--wave-light);
+    background: var(--bg-dark);
+    color: var(--text-white);
+    padding-left: 20px; /* Эффект сдвига */
 }
 
 .nav-link.active {
-    color: var(--white);
-    font-weight: bold;
-    padding-left: 10px;
-    border-left: 4px solid var(--accent-sand);
+    background: var(--accent-blue);
+    color: var(--text-white);
 }
 
-/* === ОСНОВНОЙ КОНТЕНТ (БЕЗ РАМОК) === */
+/* === ОСНОВНОЙ КОНТЕНТ (ШИРОКИЙ) === */
 .main-content {
     margin-left: 260px;
     flex-grow: 1;
-    padding: 0; /* Убираем отступы контейнера, чтобы фон был везде */
-    min-height: 100vh;
+    /* Убираем лишние отступы, чтобы не было "висящей доски" */
+    padding: 0; 
     width: calc(100% - 260px);
 }
 
-/* === КОНТЕЙНЕР ДЛЯ ТЕКСТА (Прозрачный, на всю ширину) === */
+/* Прозрачный контейнер, просто ограничивает текст по ширине, чтобы читать было удобно */
 .content-card {
-    background: transparent; /* Убираем цвет фона карточки */
-    box-shadow: none;        /* Убираем тень */
-    border: none;            /* Убираем границы */
-    padding: 50px 8%;        /* Отступы только для текста */
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 60px 10%; /* Отступы по бокам */
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Убираем декор скрепки, он тут не нужен */
-.content-card::before { display: none; }
+.content-card::before { display: none; } /* Убираем декорации */
 
-/* === ЗАГОЛОВКИ (СТИЛЬ ВОЛНЫ) === */
+/* === ЗАГОЛОВКИ === */
 h1 {
+    color: var(--text-white);
     font-size: 32px;
-    color: var(--wave-dark);
     margin-top: 0;
     margin-bottom: 40px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    /* Подчеркивание волной */
-    background-image: radial-gradient(circle, var(--wave-mid) 2px, transparent 2.5px);
-    background-size: 10px 10px;
-    background-position: 0 100%;
-    background-repeat: repeat-x;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 20px;
 }
 
 h2 {
-    color: var(--bg-cream);
-    background: var(--wave-dark);
-    padding: 12px 30px;
-    border-radius: 50px 50px 50px 0; /* Форма лепестка */
-    display: inline-block;
+    color: var(--accent-light);
+    font-size: 22px;
     margin-top: 50px;
     margin-bottom: 20px;
-    font-size: 20px;
-    box-shadow: 5px 5px 0px var(--wave-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* Небольшая линия перед заголовком H2 */
+h2::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 4px;
+    background: var(--accent-blue);
+    border-radius: 2px;
 }
 
 h3 {
-    color: var(--wave-dark);
+    color: var(--text-white);
     margin-top: 30px;
-    border-left: 4px solid var(--wave-dark);
-    padding-left: 15px;
+    font-size: 18px;
 }
 
-/* === ТЕКСТ (ПРОСТО ТЕКСТ НА ФОНЕ) === */
-/* Чтобы текст читался на узорчатом фоне, дадим ему мягкую подложку */
+/* === ТЕКСТ (DARK MODE) === */
 p, li {
-    font-size: 17px;
-    line-height: 1.8;
-    color: var(--text-main);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-grey);
     
-    background: rgba(255, 255, 255, 0.85); /* Почти белый, полупрозрачный */
+    /* Темная плашка под текстом */
+    background: var(--bg-card); 
+    
     padding: 20px;
-    border-radius: 15px; /* Мягкие углы */
-    margin-bottom: 20px;
-    
-    /* Еле заметная тень для объема */
-    box-shadow: 0 4px 15px rgba(44, 74, 82, 0.05);
-    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
 }
 
 /* Ссылки в тексте */
 .content-card a {
-    color: var(--wave-mid);
-    font-weight: bold;
+    color: var(--accent-blue);
     text-decoration: none;
-    border-bottom: 2px solid var(--wave-light);
+    border-bottom: 1px solid rgba(99, 120, 165, 0.3);
     transition: 0.2s;
 }
 .content-card a:hover {
-    background: var(--wave-dark);
-    color: var(--white);
-    padding: 0 5px;
-    border-radius: 4px;
+    color: var(--accent-light);
+    border-bottom-color: var(--accent-light);
 }
 
-/* === ОГЛАВЛЕНИЕ (ПЛИТКИ КАК НА РЕФЕРЕНСЕ) === */
+/* === ОГЛАВЛЕНИЕ (ПЛИТКИ) === */
 .toc-list h2 {
-    /* Сбрасываем стиль заголовка h2 для оглавления */
-    background: transparent;
-    color: var(--wave-dark);
-    padding: 0;
-    box-shadow: none;
-    font-size: 24px;
-    border-radius: 0;
+    color: var(--text-white);
+    border: none;
+    margin-bottom: 20px;
 }
+.toc-list h2::before { display: none; }
 
 .toc-list ul {
     display: grid;
-    /* Адаптивная сетка плиток */
+    /* Адаптивная сетка: плитки растягиваются */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 15px;
     padding: 0;
 }
 
-.toc-list li { list-style: none; margin: 0; padding: 0; background: none; box-shadow: none; border: none;}
+.toc-list li { list-style: none; margin: 0; }
 
 .toc-list a {
     display: block;
-    /* Градиентный фон для кнопок */
-    background: linear-gradient(135deg, #ffffff 0%, #f0f4f5 100%);
-    color: var(--wave-dark);
+    background: var(--bg-card);
+    color: var(--text-grey);
     text-decoration: none;
-    padding: 25px;
-    border-radius: 20px; /* Мягкая форма */
-    font-weight: bold;
-    transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.5);
-    box-shadow: 0 5px 15px rgba(44, 74, 82, 0.1);
-    position: relative;
-    overflow: hidden;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: 0.2s;
+    font-weight: 500;
 }
 
-/* Эффект волны при наведении */
 .toc-list a:hover {
-    background: var(--wave-dark);
-    color: var(--white);
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(44, 74, 82, 0.2);
+    background: var(--bg-dark);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    transform: translateY(-2px);
 }
 
-/* === БЛОКИ ВНИМАНИЯ === */
+/* === ВАЖНЫЕ БЛОКИ === */
 .important {
-    background: var(--wave-dark);
-    color: var(--white);
-    border-radius: 20px;
-    padding: 25px;
+    background: rgba(99, 120, 165, 0.1); /* Полупрозрачный синий */
+    border-left: 4px solid var(--accent-blue);
+    padding: 5px 20px; /* Уменьшил padding, так как внутри p уже есть padding */
     margin: 30px 0;
-    position: relative;
-    overflow: hidden;
+    border-radius: 4px;
 }
-.important p { 
-    background: transparent; 
-    color: var(--white); 
-    padding: 0; 
-    box-shadow: none; 
-    border: none;
-}
-/* Декор внутри блока */
-.important::after {
-    content: '✦';
-    position: absolute;
-    right: -10px;
-    bottom: -20px;
-    font-size: 100px;
-    color: rgba(255,255,255,0.1);
-}
+/* Внутри блоков important убираем фон у параграфов, чтобы не было "квадрат в квадрате" */
+.important p { background: transparent; border: none; padding: 10px 0; color: var(--text-white); }
 
 .warning {
-    background: #e0d0d0; /* Пыльный розовый */
-    border-left: 6px solid #834645;
-    border-radius: 10px;
-    padding: 20px;
+    background: rgba(200, 100, 100, 0.1); /* Полупрозрачный красный */
+    border-left: 4px solid #c64e4e;
+    padding: 5px 20px;
     margin: 30px 0;
+    border-radius: 4px;
 }
-.warning p { background: transparent; color: #5a2a2a; padding: 0; border: none; box-shadow: none;}
+.warning p { background: transparent; border: none; padding: 10px 0; color: #ffcccc; }
 
 /* === КАРТИНКИ === */
 img {
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
     margin: 20px 0;
-    border: 4px solid var(--white);
+    max-width: 100%;
 }
 
 .images-row {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    padding: 10px;
+    background: var(--bg-card);
+    padding: 15px;
+    border-radius: 8px;
     margin: 20px 0;
+    border: 1px solid var(--border-color);
 }
 
 /* Баннер загрузки */
 .hero-banner {
-    background: rgba(255,255,255,0.5);
     padding: 60px;
-    border-radius: 30px;
     text-align: center;
-    border: 2px dashed var(--wave-dark);
+    color: var(--text-grey);
 }
-.hero-banner h1 { background: none; box-shadow: none; border: none; }
+.hero-banner h1 { border: none; }
 
 /* Скроллбар */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--wave-dark); }
-::-webkit-scrollbar-thumb { background: var(--wave-mid); border-radius: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: #3e413d; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
 
 /* МОБИЛЬНАЯ ВЕРСИЯ */
 @media (max-width: 800px) {
     body { flex-direction: column; }
-    .sidebar { position: relative; width: auto; height: auto; border-right: none; }
-    .main-content { margin-left: 0; width: 100%; padding: 0;}
+    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); }
+    .main-content { margin-left: 0; width: 100%; }
     .content-card { padding: 30px 20px; }
     .toc-list ul { grid-template-columns: 1fr; }
-    h1 { font-size: 24px; }
 }
