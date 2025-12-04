@@ -1,55 +1,212 @@
+css
+:root {
+    --bg-color: #f4f6fa;       /* Очень светлый фон */
+    --card-bg: #ffffff;        /* Белые карточки */
+    --text-main: #2a2a40;      /* Темный текст */
+    --text-light: #6e6e85;     /* Серый текст */
+    
+    --accent-purple: #4a148c;  /* Глубокий фиолетовый */
+    --accent-blue: #2979ff;    /* Яркий синий */
+    --accent-cyan: #00e5ff;    /* Светящийся голубой */
+    
+    --gradient: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.container {
+    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    background-image: 
+        radial-gradient(circle at 2px 2px, #d1d5e6 1px, transparent 0),
+        linear-gradient(to right, rgba(209, 213, 230, 0.3) 1px, transparent 1px);
+    background-size: 30px 30px, 100% 100%;
     display: flex;
-    max-width: 1200px;
-    margin: 20px auto;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    min-height: 100vh;
 }
 
-.navigation {
-    width: 250px;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-    background: #fdfdfd;
+.sidebar {
+    width: 260px;
+    background: var(--card-bg);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 5px 0 20px rgba(74, 20, 140, 0.05);
+    flex-shrink: 0;
+    z-index: 10;
 }
 
-.navigation h3 {
-    margin-top: 0;
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.navigation ul {
-    list-style: none;
-    padding: 0;
+.star-icon {
+    width: 20px;
+    height: 20px;
+    background: var(--accent-purple);
+    clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
 }
 
-.navigation ul li a {
+.nav-section {
+    margin-bottom: 30px;
+}
+
+.nav-title {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    color: #007BFF;
-    display: block;
-    padding: 8px 12px;
+    color: var(--text-main);
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background: #f0f2ff;
+    color: var(--accent-purple);
+    transform: translateX(5px);
+}
+
+.nav-link.active {
+    background: var(--gradient);
+    color: white;
+    box-shadow: 0 4px 15px rgba(41, 121, 255, 0.3);
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.hero-banner {
+    background: var(--gradient);
+    border-radius: 25px;
+    padding: 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(41, 121, 255, 0.25);
+    margin-bottom: 40px;
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    z-index: 1;
+}
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* --- КАРТОЧКИ С ГАЙДАМИ --- */
+.content-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    margin-bottom: 30px;
+    border: 1px solid white;
+    position: relative;
+}
+
+.content-card h2 {
+    color: var(--accent-purple);
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.content-card h2::before {
+    content: '✦'; /* Юникод звезда */
+    margin-right: 10px;
+    color: var(--accent-cyan);
+}
+
+.content-card p {
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--bg-color);
+    color: var(--accent-purple);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    border-color: var(--accent-blue);
+    background: white;
+    box-shadow: 0 5px 15px rgba(41, 121, 255, 0.15);
+}
+
+code {
+    background: #f0f2ff;
+    color: var(--accent-purple);
+    padding: 2px 6px;
     border-radius: 4px;
-    transition: background-color 0.3s;
+    font-family: monospace;
 }
 
-.navigation ul li a:hover {
-    background-color: #e9ecef;
-}
-
-#content-area {
-    flex: 1;
-    padding: 20px 40px;
-}
-
-#content-area img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+@media (max-width: 768px) {
+    body { flex-direction: column; }
+    .sidebar { width: auto; padding: 20px; }
+    .hero-banner { padding: 20px; }
+    .hero-text h1 { font-size: 24px; }
 }
