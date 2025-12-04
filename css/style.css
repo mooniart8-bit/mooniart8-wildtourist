@@ -1,38 +1,32 @@
 :root {
-    /* ТВОЯ ПАЛИТРА (ВОЗВРАЩЕНА) */
-    --bg-dark: #242623;        /* Основной фон */
-    --bg-card: #2e312d;        /* Фон под текстом (чуть светлее) */
+    /* ТВОИ ЦВЕТА */
+    --bg-main: #6378A5;        /* Основной синий фон */
+    --block-bg: #98A7C4;       /* Светлые мини-блоки */
+    --border-dark: #1A232C;    /* Темная рамка и темный фон меню */
+    --text-white: #FBFFFF;     /* Белый текст заголовков */
     
-    --accent-blue: #6378A5;    /* Основной синий */
-    --accent-light: #98A8C1;   /* Светло-синий */
-    
-    --text-grey: #BBBBBB;      /* Основной текст */
-    --text-white: #FFFFFF;     /* Заголовки */
-    
-    --border-color: #383b36;   /* Цвет рамок */
+    /* Для текста внутри блоков берем цвет рамки, чтобы было читаемо */
+    --text-inside: #1A232C;    
 }
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-grey);
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-white);
     display: flex;
     min-height: 100vh;
-    
-    /* ФОН: Очень спокойный, темный, без навязчивых узоров */
-    background-image: radial-gradient(circle at top right, #2f332e 0%, transparent 40%);
-    background-attachment: fixed;
 }
 
-/* === МЕНЮ СЛЕВА === */
+/* === МЕНЮ СЛЕВА (ТЕМНОЕ) === */
 .sidebar {
     width: 260px;
-    background-color: #1e201d; /* Чуть темнее фона */
+    background-color: var(--border-dark); /* #1A232C */
     padding: 30px;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid var(--border-color);
+    /* Разделительная линия цвета основного фона */
+    border-right: 4px solid var(--bg-main);
     flex-shrink: 0;
     position: fixed;
     height: 100vh;
@@ -49,231 +43,245 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    letter-spacing: 1px;
+    /* Рамка вокруг лого */
+    border: 2px solid var(--block-bg);
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
 }
 
-/* Маленький аккуратный кружок в логотипе */
 .star-icon {
-    width: 10px;
-    height: 10px;
-    background: var(--accent-blue);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent-blue);
+    width: 12px;
+    height: 12px;
+    background: var(--block-bg);
+    transform: rotate(45deg);
 }
 
-.nav-section { margin-bottom: 30px; }
+.nav-section { margin-bottom: 40px; }
 
 .nav-title {
-    color: var(--accent-light);
+    color: var(--block-bg); /* #98A7C4 */
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 15px;
-    padding-left: 10px;
-    border-left: 2px solid var(--accent-blue);
+    opacity: 0.8;
 }
 
 /* Кнопки меню */
 .nav-link {
     display: block;
     text-decoration: none;
-    color: var(--text-grey);
-    padding: 10px 15px;
-    margin-bottom: 5px;
-    border-radius: 6px;
+    color: #cfcfcf;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
     transition: 0.2s;
-    font-weight: 500;
+    font-weight: 600;
+    border: 1px solid transparent;
 }
 
 .nav-link:hover {
-    background: var(--bg-dark);
+    background: var(--bg-main); /* Синий фон при наведении */
     color: var(--text-white);
-    padding-left: 20px; /* Эффект сдвига */
+    transform: translateX(5px);
+    border: 1px solid var(--block-bg);
 }
 
 .nav-link.active {
-    background: var(--accent-blue);
-    color: var(--text-white);
+    background: var(--block-bg);
+    color: var(--border-dark);
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
 }
 
-/* === ОСНОВНОЙ КОНТЕНТ (ШИРОКИЙ) === */
+/* === ОСНОВНОЙ КОНТЕНТ === */
 .main-content {
     margin-left: 260px;
     flex-grow: 1;
-    /* Убираем лишние отступы, чтобы не было "висящей доски" */
-    padding: 0; 
-    width: calc(100% - 260px);
+    padding: 50px;
+    max-width: 1100px; /* Чтобы на больших экранах текст не растягивался слишком сильно */
 }
 
-/* Прозрачный контейнер, просто ограничивает текст по ширине, чтобы читать было удобно */
+/* Карточки контейнера тут нет, контент лежит прямо на синем фоне */
 .content-card {
     background: transparent;
+    padding: 0;
     box-shadow: none;
     border: none;
-    padding: 60px 10%; /* Отступы по бокам */
-    max-width: 1200px;
-    margin: 0 auto;
 }
-
-.content-card::before { display: none; } /* Убираем декорации */
+.content-card::before { display: none; }
 
 /* === ЗАГОЛОВКИ === */
 h1 {
-    color: var(--text-white);
+    color: var(--text-white); /* #FBFFFF */
     font-size: 32px;
+    text-transform: uppercase;
     margin-top: 0;
-    margin-bottom: 40px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 20px;
+    margin-bottom: 30px;
+    /* Декоративная линия снизу */
+    border-bottom: 4px solid var(--border-dark); 
+    padding-bottom: 10px;
+    display: inline-block;
 }
 
 h2 {
-    color: var(--accent-light);
-    font-size: 22px;
-    margin-top: 50px;
+    color: var(--text-white);
+    background: var(--border-dark);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-/* Небольшая линия перед заголовком H2 */
-h2::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 4px;
-    background: var(--accent-blue);
-    border-radius: 2px;
+    display: inline-block;
+    border: 2px solid var(--block-bg);
 }
 
 h3 {
-    color: var(--text-white);
+    color: var(--block-bg);
     margin-top: 30px;
-    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
-/* === ТЕКСТ (DARK MODE) === */
+/* === МИНИ-БЛОКИ (Текст) === */
 p, li {
     font-size: 16px;
     line-height: 1.7;
-    color: var(--text-grey);
     
-    /* Темная плашка под текстом */
-    background: var(--bg-card); 
+    /* Цвет фона блока: #98A7C4 */
+    background-color: var(--block-bg);
     
-    padding: 20px;
-    border-radius: 8px;
+    /* Цвет текста внутри: #1A232C (Иначе белый на светлом не видно) */
+    color: var(--text-inside);
+    font-weight: 500;
+    
+    /* Рамка: #1A232C */
+    border: 2px solid var(--border-dark);
+    
+    padding: 15px 20px;
+    border-radius: 12px;
     margin-bottom: 15px;
-    border: 1px solid var(--border-color);
+    
+    /* Жесткая тень для объема */
+    box-shadow: 4px 4px 0px rgba(26, 35, 44, 0.5);
 }
 
-/* Ссылки в тексте */
+/* Ссылки внутри текста */
 .content-card a {
-    color: var(--accent-blue);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(99, 120, 165, 0.3);
-    transition: 0.2s;
+    color: var(--bg-main); /* Синий цвет ссылок */
+    font-weight: 800;
+    text-decoration: underline;
 }
 .content-card a:hover {
-    color: var(--accent-light);
-    border-bottom-color: var(--accent-light);
+    color: var(--border-dark);
+    text-decoration: none;
 }
 
-/* === ОГЛАВЛЕНИЕ (ПЛИТКИ) === */
+/* === ОГЛАВЛЕНИЕ === */
 .toc-list h2 {
-    color: var(--text-white);
+    background: transparent;
     border: none;
-    margin-bottom: 20px;
+    padding: 0;
+    color: var(--text-white);
+    font-size: 28px;
 }
-.toc-list h2::before { display: none; }
 
 .toc-list ul {
-    display: grid;
-    /* Адаптивная сетка: плитки растягиваются */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     padding: 0;
 }
 
-.toc-list li { list-style: none; margin: 0; }
+.toc-list li { list-style: none; margin: 0; width: calc(50% - 15px); flex-grow: 1; padding: 0; background: none; border: none; box-shadow: none; }
 
 .toc-list a {
     display: block;
-    background: var(--bg-card);
-    color: var(--text-grey);
+    /* Блок оглавления такой же, как текстовый блок */
+    background: var(--block-bg);
+    color: var(--text-inside);
+    
     text-decoration: none;
     padding: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-weight: bold;
     transition: 0.2s;
-    font-weight: 500;
+    
+    /* Темная рамка */
+    border: 2px solid var(--border-dark);
+    box-shadow: 4px 4px 0px rgba(26, 35, 44, 0.5);
 }
 
 .toc-list a:hover {
-    background: var(--bg-dark);
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
-    transform: translateY(-2px);
+    background: var(--text-white); /* Становится белым при наведении */
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px rgba(26, 35, 44, 0.8);
 }
 
-/* === ВАЖНЫЕ БЛОКИ === */
+/* === БЛОКИ ВНИМАНИЯ === */
 .important {
-    background: rgba(99, 120, 165, 0.1); /* Полупрозрачный синий */
-    border-left: 4px solid var(--accent-blue);
-    padding: 5px 20px; /* Уменьшил padding, так как внутри p уже есть padding */
-    margin: 30px 0;
-    border-radius: 4px;
+    background: #e1e9f0; /* Чуть светлее обычного блока */
+    border: 2px dashed var(--border-dark) !important;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 25px 0;
 }
-/* Внутри блоков important убираем фон у параграфов, чтобы не было "квадрат в квадрате" */
-.important p { background: transparent; border: none; padding: 10px 0; color: var(--text-white); }
+.important p { background: transparent; border: none; box-shadow: none; padding: 0; margin: 0; }
 
 .warning {
-    background: rgba(200, 100, 100, 0.1); /* Полупрозрачный красный */
-    border-left: 4px solid #c64e4e;
-    padding: 5px 20px;
-    margin: 30px 0;
-    border-radius: 4px;
+    background: #dcaaaa; /* Красноватый оттенок */
+    border: 2px solid var(--border-dark) !important;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 25px 0;
+    box-shadow: 4px 4px 0px var(--border-dark);
 }
-.warning p { background: transparent; border: none; padding: 10px 0; color: #ffcccc; }
+.warning p { background: transparent; border: none; box-shadow: none; padding: 0; margin: 0; }
 
 /* === КАРТИНКИ === */
 img {
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    border: 3px solid var(--border-dark);
     margin: 20px 0;
-    max-width: 100%;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
 }
 
 .images-row {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    background: var(--bg-card);
     padding: 15px;
-    border-radius: 8px;
+    /* Фон под картинками */
+    background: rgba(0,0,0,0.2);
+    border-radius: 15px;
+    border: 2px dashed var(--block-bg);
     margin: 20px 0;
-    border: 1px solid var(--border-color);
 }
 
 /* Баннер загрузки */
 .hero-banner {
-    padding: 60px;
+    background: var(--block-bg);
+    padding: 50px;
+    border-radius: 20px;
     text-align: center;
-    color: var(--text-grey);
+    border: 3px solid var(--border-dark);
+    box-shadow: 8px 8px 0px var(--border-dark);
 }
-.hero-banner h1 { border: none; }
+.hero-banner h1 { 
+    border: none; 
+    color: var(--text-inside); 
+    display: block;
+}
 
 /* Скроллбар */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--bg-dark); }
-::-webkit-scrollbar-thumb { background: #3e413d; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--border-dark); }
+::-webkit-scrollbar-thumb { background: var(--block-bg); border: 2px solid var(--border-dark); border-radius: 10px; }
 
 /* МОБИЛЬНАЯ ВЕРСИЯ */
 @media (max-width: 800px) {
     body { flex-direction: column; }
-    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); }
-    .main-content { margin-left: 0; width: 100%; }
-    .content-card { padding: 30px 20px; }
-    .toc-list ul { grid-template-columns: 1fr; }
+    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 4px solid var(--bg-main); }
+    .main-content { margin-left: 0; padding: 20px; }
+    .toc-list li { width: 100%; }
 }
