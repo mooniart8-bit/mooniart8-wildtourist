@@ -1,62 +1,31 @@
 html
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гайд по ошибкам</title>
-    <!-- ЭТА СТРОЧКА ВАЖНАЯ: ОНА ПОДКЛЮЧАЕТ ВАШ ДИЗАЙН -->
-    <link rel="stylesheet" href="style.css"> 
-</head>
-<body>
+<div class="content-card">
+    <div class="base-section">
+        <!-- id="base" нужен для навигации, если ссылка ведет именно сюда -->
+        <h1 id="base">БАЗА (Что такое консоль)</h1>
+        
+        <p>Прежде всего разберемся, где конкретно смотреть ошибки, как их вычислить. В чате часто спрашивают, что конкретно имеется в виду под словом «консоль». Именно в этих консолях и пишутся основные ошибки, что происходят в ТАВЕРНЕ.</p>
+        
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
 
-    <!-- === НАЧАЛО МЕНЮ === -->
-    <aside class="sidebar">
-        <div class="logo">
-            <div class="star-icon"></div>
-            MY GUIDES
+        <!-- Блок с предупреждением про скриншот -->
+        <div class="warning" style="background: #fff5f5; border-left: 4px solid #ff4444; padding: 20px; margin: 20px 0; border-radius: 5px;">
+            <p style="color: #cc0000; margin-top: 0;"><strong>❌ Пример ошибки, которую присылать НЕ НАДО:</strong></p>
+            
+            <!-- Картинка адаптируется под ширину экрана -->
+            <img src="media/image1.jpeg" alt="Пример обычной ошибки" style="max-width: 100%; height: auto; border-radius: 8px; margin: 10px 0; border: 1px solid #ffcccc;">
+            
+            <p style="margin-bottom: 0;"><strong>Эта ошибка обычно всегда ОДИНАКОВАЯ и не дает информации. Нам нужен скриншот черного окна (консоли).</strong></p>
         </div>
-
-        <div class="nav-section">
-            <div class="nav-title">Главное</div>
-            <a href="index.html" class="nav-link">✨ Домашняя</a>
+        
+        <h2>Консоль ПК:</h2>
+        <img src="media/image2.png" alt="Консоль на ПК" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        
+        <h2 style="margin-top: 30px;">Консоль телефонов Termux:</h2>
+        <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+            <!-- width: 48% позволяет поставить две картинки рядом с небольшим отступом -->
+            <img src="media/image3.png" alt="Консоль Termux 1" style="width: 48%; max-width: 300px; height: auto; border-radius: 8px; object-fit: contain; border: 1px solid #eee;">
+            <img src="media/image4.png" alt="Консоль Termux 2" style="width: 48%; max-width: 300px; height: auto; border-radius: 8px; object-fit: contain; border: 1px solid #eee;">
         </div>
-
-        <div class="nav-section">
-            <div class="nav-title">SillyTavern</div>
-            <a href="tavern_install.html" class="nav-link">📥 Установка</a>
-            <a href="tavern_prompts.html" class="nav-link">📝 Промпты</a>
-            <!-- Ссылка на эту страницу выделена цветом (active) -->
-            <a href="errors.html" class="nav-link active">🚫 Ошибки</a>
-        </div>
-    </aside>
-    <!-- === КОНЕЦ МЕНЮ === -->
-
-    <!-- === НАЧАЛО КОНТЕНТА === -->
-    <main class="main-content">
-
-        <!-- Вот сюда я вставил ваш код -->
-        <div class="content-card">
-                    <div class="base-section">
-    <h1 id="base">БАЗА (Что такое консоль)</h1>
-    
-    <p>Прежде всего разберемся, где конкретно смотреть ошибки, как их вычислить. В чате часто спрашивают, что конкретно имеется в виду под словом «консоль». Именно в этих консолях и пишутся основные ошибки, что происходят в ТАВЕРНЕ.</p>
-    
-    <div class="info-block">
-        <img src="media/image1.jpeg" alt="Пример обычной ошибки" style="max-width: 300px;">
-        <p><strong>Присылать такую ошибку НЕ НАДО, потому что она обычно всегда ОДИНАКОВАЯ.</strong></p>
     </div>
-    
-    <h2>Консоль ПК:</h2>
-    <img src="media/image2.png" alt="Консоль на ПК">
-    
-    <h2>Консоль телефонов Termux:</h2>
-    <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <img src="media/image3.png" alt="Консоль Termux 1" style="max-width: 45%;">
-        <img src="media/image4.png" alt="Консоль Termux 2" style="max-width: 45%;">
-   </div>
-                    </div>
-                    html
-        </main>
-    </body>
-    </html>
+</div>
