@@ -1,24 +1,25 @@
 css
 :root {
-    /* ТВОЯ ПАЛИТРА */
-    --c-light-blue: #95A2C5;   /* Светло-синий (Фон) */
-    --c-deep-blue: #435792;    /* Глубокий синий (Акценты, Текст заголовков) */
-    --c-peach: #E6B098;        /* Персиковый (Основа для текста) */
-    --c-salmon: #DE8D78;       /* Лососевый (Блоки, Кнопки) */
-    --c-rust: #C6664E;         /* Темно-рыжий (Рамки, Акценты) */
+    /* ПАЛИТРА */
+    --c-light-blue: #95A2C5;
+    --c-deep-blue: #435792;
+    --c-peach: #E6B098;
+    --c-salmon: #DE8D78;
+    --c-rust: #C6664E;
     
-    --text-color: #2a3352;     /* Очень темный синий для читаемости текста */
+    --text-color: #2a3352;
 }
 
 body {
     margin: 0;
     font-family: 'Verdana', sans-serif;
+    /* ФОН ДОЛЖЕН БЫТЬ СИНИМ, А НЕ БЕЛЫМ */
     background-color: var(--c-light-blue);
     color: var(--text-color);
     display: flex;
     min-height: 100vh;
     
-    /* ФОН: Сетка из глубокого синего (вместо белого) */
+    /* Узор: Тонкая сетка */
     background-image: 
         linear-gradient(rgba(67, 87, 146, 0.1) 2px, transparent 2px),
         linear-gradient(90deg, rgba(67, 87, 146, 0.1) 2px, transparent 2px);
@@ -32,7 +33,6 @@ body {
     padding: 30px;
     display: flex;
     flex-direction: column;
-    /* Вместо белой рамки - персиковая */
     border-right: 5px solid var(--c-peach);
     flex-shrink: 0;
     position: fixed;
@@ -59,7 +59,6 @@ body {
     gap: 10px;
 }
 
-/* 4-конечная звезда */
 .star-icon {
     width: 20px;
     height: 20px;
@@ -79,11 +78,10 @@ body {
     padding-bottom: 5px;
 }
 
-/* Кнопки меню */
 .nav-link {
     display: block;
     text-decoration: none;
-    background: rgba(230, 176, 152, 0.1); /* Прозрачный персиковый */
+    background: rgba(230, 176, 152, 0.1);
     color: var(--c-peach);
     padding: 12px 15px;
     margin-bottom: 8px;
@@ -114,24 +112,19 @@ body {
     max-width: 950px;
 }
 
-/* === ГЛАВНАЯ КАРТОЧКА (Основа для текста) === */
+/* === ГЛАВНАЯ КАРТОЧКА === */
 .content-card {
-    background-color: var(--c-peach); /* Персиковый фон вместо белого */
+    background-color: var(--c-peach); /* Персиковый фон */
     padding: 50px;
     border-radius: 15px;
-    
-    /* Рамка и Тень */
     border: 4px solid var(--c-deep-blue);
     box-shadow: 15px 15px 0px rgba(67, 87, 146, 0.4);
-    
     position: relative;
-    
-    /* Узор: Точки на фоне текста */
     background-image: radial-gradient(var(--c-rust) 1px, transparent 1px);
     background-size: 20px 20px;
 }
 
-/* Декор: Линия "скотча" сверху */
+/* Скотч сверху */
 .content-card::before {
     content: '';
     position: absolute;
@@ -145,7 +138,7 @@ body {
     border-radius: 2px;
 }
 
-/* === ЗАГОЛОВКИ === */
+/* Заголовки */
 h1 {
     background: var(--c-deep-blue);
     color: var(--c-peach);
@@ -156,12 +149,11 @@ h1 {
     border-radius: 8px;
     border: 2px solid var(--c-peach);
     box-shadow: 6px 6px 0px var(--c-rust);
-    
     display: flex;
     align-items: center;
     gap: 15px;
 }
-h1 .star-icon { background: var(--c-peach); } /* Звезда внутри заголовка */
+h1 .star-icon { background: var(--c-peach); }
 
 h2 {
     display: inline-block;
@@ -183,17 +175,15 @@ h3 {
     margin-top: 30px;
 }
 
-/* Текст */
 p, li {
     font-size: 16px;
     line-height: 1.7;
-    /* Полупрозрачная подложка, чтобы текст читался на персиковом */
-    background: rgba(255,255,255, 0.3); 
+    background: rgba(255,255,255, 0.3);
     padding: 5px;
     border-radius: 4px;
 }
 
-/* === ОГЛАВЛЕНИЕ (Цветные блоки) === */
+/* Оглавление */
 .toc-list h2 {
     background: transparent;
     color: var(--c-deep-blue);
@@ -212,16 +202,12 @@ p, li {
     padding: 0;
 }
 
-.toc-list li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background: none;
-}
+.toc-list li { list-style: none; margin: 0; padding: 0; background: none; }
 
 .toc-list a {
-    display: block;
-    /* Фон кнопок - Светло-синий */
+    display: flex;
+    align-items: center;
+    gap: 10px;
     background: var(--c-light-blue);
     color: var(--c-deep-blue);
     text-decoration: none;
@@ -230,15 +216,8 @@ p, li {
     border: 2px solid var(--c-deep-blue);
     border-radius: 8px;
     transition: 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
-
-.toc-list a::before {
-    content: '✦';
-    color: var(--c-rust);
-}
+.toc-list a::before { content: '✦'; color: var(--c-rust); }
 
 .toc-list a:hover {
     background: var(--c-salmon);
@@ -248,7 +227,7 @@ p, li {
     box-shadow: 4px 4px 0px var(--c-rust);
 }
 
-/* === БЛОКИ ВНИМАНИЯ === */
+/* Блоки внимания */
 .important {
     background: var(--c-light-blue);
     border: 2px dashed var(--c-deep-blue) !important;
@@ -270,7 +249,7 @@ p, li {
 }
 .warning p { color: white; background: transparent; }
 
-/* === КАРТИНКИ === */
+/* Картинки */
 img {
     border: 4px solid var(--c-deep-blue);
     border-radius: 5px;
