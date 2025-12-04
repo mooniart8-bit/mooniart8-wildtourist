@@ -1,100 +1,63 @@
 html
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гайд по ошибкам</title>
-    <!-- ЭТА СТРОЧКА ВАЖНАЯ: ОНА ПОДКЛЮЧАЕТ ВАШ ДИЗАЙН -->
-    <link rel="stylesheet" href="style.css"> 
-</head>
-<body>
+<div class="content-card">
+    <div class="electron-section">
+        <!-- ID должен совпадать с тем, что в index.html (electronhub) -->
+        <h1 id="electronhub">ELECTRONHUB.AI ОШИБКИ</h1>
 
-    <!-- === НАЧАЛО МЕНЮ === -->
-    <aside class="sidebar">
-        <div class="logo">
-            <div class="star-icon"></div>
-            MY GUIDES
-        </div>
+        <section id="official-errors" style="margin-bottom: 40px;">
+            <h2>Официальные коды ошибок</h2>
+            <ul style="line-height: 1.8; background: #f8f9fa; padding: 20px 20px 20px 40px; border-radius: 8px;">
+                <li><strong style="color: #d32f2f;">401:</strong> Неверный ключ / истек срок / бан.</li>
+                <li><strong style="color: #f57c00;">429:</strong> Слишком много запросов (подождите).</li>
+                <li><strong style="color: #d32f2f;">400:</strong> Неверная модель или запрещенный контент.</li>
+                <li><strong style="color: #1976d2;">402:</strong> Требуется оплата (недостаточно кредитов).</li>
+                <li><strong style="color: #7b1fa2;">500/503:</strong> Ошибка сервера (ждите).</li>
+            </ul>
+        </section>
 
-        <div class="nav-section">
-            <div class="nav-title">Главное</div>
-            <a href="index.html" class="nav-link">✨ Домашняя</a>
-        </div>
+        <section id="context-error" style="margin-bottom: 40px;">
+            <h2>Ошибка контекста</h2>
+            <p>Вы не указали правильный размер контекста для модели. Сверяйтесь с официальным сайтом (например, для DeepSeek v3.1 контекст 64к).</p>
+            <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap; margin: 15px 0;">
+                <img src="media/image89.png" alt="Ошибка контекста 1" style="max-width: 48%; border-radius: 8px; border: 1px solid #eee;">
+                <img src="media/image90.png" alt="Ошибка контекста 2" style="max-width: 48%; border-radius: 8px; border: 1px solid #eee;">
+            </div>
+            
+            <h3>Настройка в JanitorAI:</h3>
+            <img src="media/image94.png" alt="Настройка Janitor" style="max-width: 100%; border-radius: 8px; margin-bottom: 20px;">
+            
+            <h3>Настройка в SillyTavern:</h3>
+            <p>Нужно рассчитать контекст и макс. длину ответа. Макс. длина + Контекст должны укладываться в лимит модели.</p>
+            <img src="media/image95.png" alt="Настройка SillyTavern" style="max-width: 100%; border-radius: 8px;">
+        </section>
 
-        <div class="nav-section">
-            <div class="nav-title">SillyTavern</div>
-            <a href="tavern_install.html" class="nav-link">📥 Установка</a>
-            <a href="tavern_prompts.html" class="nav-link">📝 Промпты</a>
-            <!-- Ссылка на эту страницу выделена цветом (active) -->
-            <a href="errors.html" class="nav-link active">🚫 Ошибки</a>
-        </div>
-    </aside>
-    <!-- === КОНЕЦ МЕНЮ === -->
+        <section id="error-405" style="margin-bottom: 40px;">
+            <h2>Ошибка 405 «Method Not Allowed»</h2>
+            <p>Неправильно написана модель или URL прокси.</p>
+            <p><strong>Правильные URL:</strong></p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><code>https://api.electronhub.ai/v1/chat/completions</code></li>
+                <li><code>https://api.electronhub.ai/chat/completions</code></li>
+            </ul>
+            <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+                <img src="media/image96.png" alt="Ошибка 405" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/image97.png" alt="Пример ошибки" style="max-width: 48%; border-radius: 8px;">
+            </div>
+        </section>
 
-    <!-- === НАЧАЛО КОНТЕНТА === -->
-    <main class="main-content">
+        <section id="max-accounts" style="margin-bottom: 40px;">
+            <h2>Ошибка «Максимум 3 аккаунта»</h2>
+            <p>Даже с одним аккаунтом использование публичного VPN может привести к этой ошибке (совпадение IP). Смените сервер.</p>
+            <img src="media/image100.png" alt="Ошибка 3 аккаунта" style="max-width: 100%; border-radius: 8px;">
+        </section>
 
-        <!-- Вот сюда я вставил ваш код -->
-        <div class="content-card">
-                    <div class="electron-section">
-    <h1>ELECTRONHUB.AI ОШИБКИ</h1>
-
-    <section id="official-errors">
-        <h2>Официальные коды ошибок</h2>
-        <ul>
-            <li><strong>401:</strong> Неверный ключ / истек срок / бан.</li>
-            <li><strong>429:</strong> Слишком много запросов (подождите).</li>
-            <li><strong>400:</strong> Неверная модель или запрещенный контент.</li>
-            <li><strong>402:</strong> Требуется оплата (недостаточно кредитов).</li>
-            <li><strong>500/503:</strong> Ошибка сервера (ждите).</li>
-        </ul>
-    </section>
-
-    <section id="context-error">
-        <h2>Ошибка контекста</h2>
-        <p>Вы не указали правильный размер контекста для модели. Сверяйтесь с официальным сайтом (например, для DeepSeek v3.1 контекст 64к).</p>
-        <div class="images-row">
-            <img src="media/image89.png" alt="Ошибка контекста 1">
-            <img src="media/image90.png" alt="Ошибка контекста 2">
-        </div>
-        
-        <h3>Настройка в JanitorAI:</h3>
-        <img src="media/image94.png" alt="Настройка Janitor" style="max-width: 300px;">
-        
-        <h3>Настройка в SillyTavern:</h3>
-        <p>Нужно рассчитать контекст и макс. длину ответа. Макс. длина + Контекст должны укладываться в лимит модели.</p>
-        <img src="media/image95.png" alt="Настройка SillyTavern">
-    </section>
-
-    <section id="error-405">
-        <h2>Ошибка 405 «Method Not Allowed»</h2>
-        <p>Неправильно написана модель или URL прокси.</p>
-        <p><strong>Правильные URL:</strong></p>
-        <ul>
-            <li>de>https://api.electronhub.ai/v1/chat/completions</code></li>
-            <li>de>https://api.electronhub.ai/chat/completions</code></li>
-        </ul>
-        <div class="images-row">
-            <img src="media/image96.png" alt="Ошибка 405">
-            <img src="media/image97.png" alt="Пример ошибки" style="max-width: 400px;">
-        </div>
-    </section>
-
-    <section id="max-accounts">
-        <h2>Ошибка «Максимум 3 аккаунта»</h2>
-        <p>Даже с одним аккаунтом использование публичного VPN может привести к этой ошибке (совпадение IP). Смените сервер.</p>
-        <img src="media/image100.png" alt="Ошибка 3 аккаунта">
-    </section>
-
-    <section id="quota-ads">
-        <h2>Ошибка «закончилась квота, посмотрите рекламу»</h2>
-        <p>Пока не рекомендуется просматривать рекламу (возможны баги и баны). Если забанили — пишите тикет в их Discord.</p>
-        <img src="media/image101.png" alt="Ошибка рекламы">
-    </section>
+        <section id="quota-ads" style="margin-bottom: 40px;">
+            <h2>Ошибка «закончилась квота, посмотрите рекламу»</h2>
+            <div class="warning" style="background: #fff5f5; border-left: 4px solid #ff4444; padding: 15px; border-radius: 5px; margin-bottom: 15px;">
+                 <p style="margin: 0; color: #cc0000;"><strong>Внимание:</strong> Пока не рекомендуется просматривать рекламу (возможны баги и баны).</p>
+            </div>
+            <p>Если забанили — пишите тикет в их Discord.</p>
+            <img src="media/image101.png" alt="Ошибка рекламы" style="max-width: 100%; border-radius: 8px;">
+        </section>
+    </div>
 </div>
-        </div>
-        html
-        </main>
-    </body>
-    </html>
