@@ -1,42 +1,43 @@
 css
 :root {
-    /* ПАЛИТРА: Miku Style / Modern Anime */
-    --bg-color: #F9FAFD;       /* Почти белый фон */
-    --card-bg: #FFFFFF;        /* Чисто белый для карточек */
+    /* ПАЛИТРА ИЗ РЕФЕРЕНСА (Rinn Carrd) */
+    --bg-color: #DAB6AA;       /* Пыльный персиковый (фон) */
+    --card-bg: #FFF9F5;        /* Кремовый белый */
     
-    --primary-blue: #4361EE;   /* Насыщенный синий */
-    --primary-purple: #7209B7; /* Глубокий фиолетовый */
-    --primary-cyan: #4CC9F0;   /* Яркий голубой */
+    --accent-blue: #9FB1D9;    /* Барвинковый (Periwinkle) */
+    --accent-red: #E68E8E;     /* Мягкий коралловый */
+    --accent-orange: #E6CDB8;  /* Песочный */
     
-    --text-main: #2B2D42;      /* Темно-синий текст (почти черный) */
-    --text-light: #8D99AE;     /* Серый текст */
-    
-    --gradient-main: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
-    --gradient-cyan: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+    --text-main: #5C6275;      /* Темно-серый с синим оттенком */
+    --white-border: #FFFFFF;   /* Белые границы (ВАЖНО для этого стиля) */
 }
 
 body {
     margin: 0;
-    font-family: 'Nunito', 'Segoe UI', Tahoma, sans-serif; /* Округлый, приятный шрифт */
+    font-family: 'Verdana', 'Segoe UI', sans-serif; /* Простой, четкий шрифт */
     background-color: var(--bg-color);
     color: var(--text-main);
     display: flex;
     min-height: 100vh;
     
-    /* ФОН: Белый с полупрозрачными точками (Polka Dots) */
-    background-image: radial-gradient(#E0E7FF 2px, transparent 2px);
-    background-size: 25px 25px; /* Размер сетки точек */
+    /* ФОН: Клетка (Grid) как на картинке */
+    background-image:
+        linear-gradient(rgba(255,255,255,0.3) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255,255,255,0.3) 2px, transparent 2px);
+    background-size: 50px 50px; /* Крупная клетка */
 }
 
 /* === МЕНЮ СЛЕВА === */
 .sidebar {
     width: 280px;
-    background: var(--card-bg);
-    padding: 30px;
+    background: var(--accent-blue); /* Голубая панель */
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    /* Мягкая тень справа вместо рамки */
-    box-shadow: 4px 0 20px rgba(114, 9, 183, 0.05);
+    /* ДВОЙНАЯ РАМКА: Белая снаружи, синяя внутри */
+    border-right: 6px solid var(--white-border);
+    outline: 2px solid var(--accent-blue); 
+    
     flex-shrink: 0;
     position: fixed;
     height: 100vh;
@@ -45,258 +46,287 @@ body {
 }
 
 .logo {
-    font-weight: 800;
-    font-size: 28px;
-    background: var(--gradient-main);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 40px;
+    background: var(--card-bg);
+    color: var(--accent-blue);
+    padding: 15px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    
+    /* Эффект наклейки */
+    border: 4px solid var(--white-border);
+    box-shadow: 0 0 0 2px var(--accent-blue); 
+    border-radius: 10px;
+    
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
 /* 4-конечная звезда (Декор) */
 .star-icon {
-    width: 24px;
-    height: 24px;
-    background: var(--primary-cyan);
+    width: 20px;
+    height: 20px;
+    background: var(--accent-red);
     clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
     display: inline-block;
 }
 
 .nav-title {
-    color: var(--text-light);
-    font-weight: 700;
+    background: var(--white-border);
+    color: var(--accent-blue);
+    padding: 5px 10px;
+    font-weight: bold;
     text-transform: uppercase;
     font-size: 12px;
-    letter-spacing: 1.5px;
-    margin-bottom: 15px;
-    margin-top: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: inline-block;
 }
 
-/* Кнопки меню - округлые, мягкие */
+/* Кнопки меню - Блоки */
 .nav-link {
     display: block;
     text-decoration: none;
-    color: var(--text-main);
-    padding: 12px 20px;
+    background: rgba(255,255,255,0.3); /* Полупрозрачный белый */
+    color: white;
+    padding: 12px 15px;
     margin-bottom: 8px;
-    border-radius: 50px; /* Полностью круглые края */
-    transition: 0.3s;
+    border-radius: 6px;
+    transition: 0.2s;
     font-weight: 600;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
 }
 
 .nav-link:hover {
-    background: #F0F4FF;
-    color: var(--primary-blue);
-    transform: translateX(5px);
+    background: var(--white-border);
+    color: var(--accent-blue);
+    border: 2px solid var(--accent-blue); /* Цветная обводка при наведении */
 }
 
 .nav-link.active {
-    background: var(--gradient-main);
+    background: var(--accent-red);
     color: white;
-    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    border: 2px solid var(--white-border);
+    box-shadow: 0 0 0 2px var(--accent-red); /* Имитация двойной рамки */
 }
 
 /* === ОСНОВНОЙ КОНТЕНТ === */
 .main-content {
-    margin-left: 320px;
+    margin-left: 330px;
     flex-grow: 1;
     padding: 50px;
-    max-width: 950px;
+    max-width: 900px;
 }
 
-/* Баннер загрузки */
-.hero-banner {
-    background: var(--gradient-cyan);
-    border-radius: 25px;
-    padding: 40px;
-    color: white;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(76, 201, 240, 0.3);
-}
-
-/* === БЕЛАЯ КАРТОЧКА (Основа) === */
+/* === ГЛАВНАЯ КАРТОЧКА === */
 .content-card {
     background: var(--card-bg);
-    border-radius: 30px; /* Сильные скругления как на референсе */
-    padding: 50px;
-    box-shadow: 0 10px 40px rgba(114, 9, 183, 0.08); /* Очень мягкая цветная тень */
+    padding: 40px;
+    border-radius: 15px;
+    
+    /* ГЛАВНАЯ ОБВОДКА (Стиль Carrd) */
+    border: 6px solid var(--white-border);
+    outline: 2px solid var(--accent-red); /* Вторая цветная линия */
+    box-shadow: 10px 10px 0px rgba(92, 98, 117, 0.1);
+    
     position: relative;
-    overflow: hidden; /* Чтобы узоры не вылезали */
+    /* Фон внутри карточки: очень прозрачные точки */
+    background-image: radial-gradient(var(--accent-blue) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: #FFF9F5; /* Чтобы точки были на фоне */
 }
 
-/* ДЕКОР: Большой полупрозрачный круг в углу */
+/* Декоративная линия сверху */
 .content-card::before {
     content: '';
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, var(--primary-cyan) 0%, transparent 70%);
-    opacity: 0.1;
-    z-index: 0;
-    pointer-events: none;
+    display: block;
+    height: 4px;
+    background: var(--accent-blue);
+    margin-bottom: 30px;
+    border-radius: 2px;
+    opacity: 0.5;
 }
 
-/* === ЗАГОЛОВКИ (В блоках с узором) === */
+/* === ЗАГОЛОВКИ (Цветные блоки) === */
 h1 {
-    position: relative;
-    background: var(--gradient-main);
+    background: var(--accent-blue);
     color: white;
-    padding: 20px 30px;
-    border-radius: 20px;
+    padding: 15px 20px;
     font-size: 24px;
     text-transform: uppercase;
     margin-top: 0;
-    box-shadow: 0 8px 20px rgba(114, 9, 183, 0.25);
     
-    /* Узор: полупрозрачные точки поверх градиента */
-    background-image: 
-        radial-gradient(rgba(255,255,255,0.2) 2px, transparent 2px),
-        linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
-    background-size: 10px 10px, 100% 100%;
+    /* Двойная рамка */
+    border: 4px solid var(--white-border);
+    box-shadow: 0 0 0 2px var(--accent-blue);
+    border-radius: 8px;
+    
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+/* Добавляем звездочку в заголовок H1 */
+h1::before {
+    content: '✦';
+    color: var(--card-bg);
 }
 
 h2 {
-    display: inline-block;
-    background: var(--primary-cyan);
+    background: var(--accent-red);
     color: white;
-    padding: 10px 20px;
-    border-radius: 50px; /* Капсула */
+    padding: 8px 20px;
+    display: inline-block;
     font-size: 18px;
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     
-    /* Узор: полосочки */
-    background-image: linear-gradient(45deg, rgba(255,255,255,0.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.15) 75%, transparent 75%, transparent);
-    background-size: 20px 20px;
+    border: 3px solid var(--white-border);
+    border-radius: 50px; /* Овальные заголовки */
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
 }
 
 h3 {
-    color: var(--primary-purple);
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    color: var(--accent-blue);
+    border-bottom: 2px dashed var(--accent-blue);
+    display: inline-block;
+    padding-bottom: 5px;
     margin-top: 30px;
-}
-h3::before {
-    content: '';
-    display: block;
-    width: 8px;
-    height: 8px;
-    background: var(--primary-cyan);
-    border-radius: 50%;
 }
 
 /* Текст */
 p, li {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+    background: rgba(255,255,255,0.7); /* Белая подложка под текстом для читаемости */
+    padding: 5px; 
+    border-radius: 4px;
 }
 
-/* === ОГЛАВЛЕНИЕ (Полигоны без острых углов) === */
+/* === ОГЛАВЛЕНИЕ (Квадратные цветные блоки) === */
 .toc-list h2 {
     background: transparent;
-    color: var(--primary-blue);
+    color: var(--accent-blue);
+    border: none;
+    box-shadow: none;
     padding: 0;
     margin-bottom: 10px;
-    background-image: none; /* Убираем фон у заголовков внутри оглавления */
+    text-decoration: underline;
+    text-decoration-color: var(--accent-red);
+    text-decoration-thickness: 3px;
 }
 
 .toc-list ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Сетка */
+    gap: 15px;
     padding: 0;
 }
 
 .toc-list li {
     list-style: none;
     margin: 0;
-    flex-grow: 1;
+    background: none;
+    padding: 0;
 }
 
 .toc-list a {
     display: block;
-    background: #F4F7FE;
-    color: var(--primary-blue);
+    background: var(--white-border);
+    color: var(--text-main);
     text-decoration: none;
-    padding: 15px 20px;
-    border-radius: 15px; /* Скругленные углы (не острые) */
+    padding: 15px;
     font-weight: 600;
-    transition: 0.3s;
-    border: 1px solid transparent;
-    text-align: center;
     
-    /* Декор: маленькая точка слева */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    /* Рамочки вокруг ссылок */
+    border: 2px solid var(--accent-blue);
+    border-radius: 8px;
+    transition: 0.2s;
+    
+    position: relative;
+    overflow: hidden;
 }
 
-/* Цветные варианты при наведении */
 .toc-list a:hover {
-    background: white;
-    border-color: var(--primary-cyan);
-    color: var(--primary-purple);
-    box-shadow: 0 5px 15px rgba(76, 201, 240, 0.2);
-    transform: translateY(-2px);
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 0px var(--accent-red); /* Тень другого цвета */
 }
 
-/* === БЛОКИ ВНИМАНИЯ (Цветные, с узорами) === */
+/* === БЛОКИ ВНИМАНИЯ === */
 .important {
-    background: #E0F7FA; /* Светло-голубой */
-    border-radius: 15px;
+    background: white;
+    border: 3px solid var(--accent-blue);
+    border-radius: 10px;
     padding: 20px;
-    border-left: 5px solid var(--primary-cyan);
     margin: 20px 0;
-    color: #006064;
+    position: relative;
+}
+.important::after {
+    content: 'i'; /* Значок информации */
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    background: var(--accent-blue);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    border: 3px solid white;
 }
 
 .warning {
-    background: #F3E5F5; /* Светло-фиолетовый */
-    border-radius: 15px;
+    background: white;
+    border: 3px solid var(--accent-red);
+    border-radius: 10px;
     padding: 20px;
-    border-left: 5px solid var(--primary-purple);
     margin: 20px 0;
-    color: #4A148C;
+    color: var(--accent-red);
 }
 
-/* === КАРТИНКИ === */
+/* === КАРТИНКИ (В рамочках) === */
 img {
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Мягкая тень */
-    transition: 0.3s;
-    border: 4px solid white; /* Белая рамка */
-}
-img:hover {
-    transform: scale(1.02);
+    border: 5px solid var(--white-border);
+    outline: 2px solid var(--accent-orange);
+    border-radius: 5px;
+    margin: 15px 0;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
 }
 
 .images-row {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
+    background: rgba(255,255,255,0.5);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px dashed var(--accent-blue);
     margin: 20px 0;
 }
 
-/* Скроллбар */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--bg-color); }
-::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: var(--primary-blue); }
+/* Баннер загрузки */
+.hero-banner {
+    text-align: center;
+    padding: 40px;
+    border: 2px dashed var(--accent-blue);
+    border-radius: 10px;
+    color: var(--accent-blue);
+}
 
-/* МОБИЛЬНАЯ ВЕРСИЯ */
+/* Мобильная версия */
 @media (max-width: 768px) {
     body { flex-direction: column; }
-    .sidebar { position: relative; width: auto; height: auto; box-shadow: none; border-bottom: 1px solid #eee; }
+    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 6px solid var(--white-border); outline: none; }
     .main-content { margin-left: 0; padding: 20px; }
-    .content-card { padding: 25px; }
-    h1 { font-size: 18px; }
+    .content-card { padding: 20px; }
+    .toc-list ul { grid-template-columns: 1fr; }
 }
