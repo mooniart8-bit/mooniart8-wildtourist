@@ -1,46 +1,46 @@
-html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Гайд по ошибкам</title>
-    <!-- Подключаем дизайн -->
+    <!-- Убедитесь, что файл называется style.css и лежит рядом -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- МЕНЮ (Сайдбар) -->
+    <!-- БОКОВОЕ МЕНЮ -->
     <nav class="sidebar navigation">
         <div class="logo">
             <div class="star-icon"></div>
             GUIDES
         </div>
 
-        html
         <div class="nav-section">
             <div class="nav-title">Меню</div>
             
-            <!-- Я добавил оглавление самым первым, так удобнее -->
+            <!-- Ссылка на оглавление -->
             <a href="#toc" class="nav-link" data-content="toc">📑 Оглавление</a>
             
-            <!-- Дальше идут твои старые ссылки -->
+            <!-- Основные ссылки -->
             <a href="#intro" class="nav-link" data-content="intro">Введение</a>
             <a href="#base" class="nav-link" data-content="base">База (Консоль)</a>
             <a href="#tavern" class="nav-link" data-content="tavern">Ошибки Таверны</a>
             <a href="#janitorai" class="nav-link" data-content="janitorai">Ошибки JanitorAI</a>
             <a href="#electronhub" class="nav-link" data-content="electronhub">Ошибки ElectronHub</a>
         </div>
+    </nav>
 
     <!-- СЮДА ЗАГРУЖАЕТСЯ ТЕКСТ -->
     <main id="content-area" class="main-content">
-        <!-- Пока ничего не загружено, покажем это -->
+        <!-- Баннер при загрузке -->
         <div class="hero-banner">
             <h1>Загрузка... <div class="star-icon" style="background: white;"></div></h1>
+            <p>Выберите раздел в меню слева.</p>
         </div>
     </main>
 
-    <!-- Твой скрипт -->
+    <!-- Скрипт -->
     <script src="js/app.js"></script>
 </body>
 </html>
