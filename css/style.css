@@ -146,7 +146,7 @@ h3 {
 }
 
 /* === МИНИ-БЛОКИ (Текст) === */
-p, li {
+p {
     font-size: 15px;
     line-height: 1.6;
     background-color: var(--block-bg); /* #98A7C4 */
