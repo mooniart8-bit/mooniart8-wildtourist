@@ -1,28 +1,22 @@
 css
 :root {
-    /* ПАЛИТРА ИЗ ТВОИХ КАРТИНОК */
-    --bg-dark: #222629;         /* Темный фон страницы */
-    --retro-teal: #3E6868;      /* Тот самый красивый бирюзовый */
-    --retro-red: #C94E44;       /* Красный акцент */
-    --retro-sand: #EBE5CE;      /* Цвет бумаги (светло-песочный) */
-    --text-color: #2c2c2c;      /* Цвет текста (почти черный) */
+    /* Цвета из твоего референса */
+    --bg-color: #2F3E46;       /* Темный серо-зеленый фон (как на палитре) */
+    --sidebar-bg: #222d33;     /* Чуть темнее для меню */
     
-    --border-color: #1a1a1a;    /* Цвет обводок */
+    --paper-color: #F2E8C9;    /* Цвет старой бумаги (песочный) */
+    --text-color: #2b2b2b;     /* Темный текст для контраста */
+    
+    --accent-red: #C94E44;     /* Ретро красный */
+    --accent-teal: #3E6868;    /* Ретро бирюзовый */
+    --accent-gold: #C1AB85;    /* Золотисто-бежевый */
 }
 
 body {
     margin: 0;
-    font-family: 'Courier Prime', 'Courier New', monospace; /* Шрифт как на печатной машинке */
-    background-color: var(--bg-dark);
-    background-image: 
-        linear-gradient(30deg, #2a2e31 12%, transparent 12.5%, transparent 87%, #2a2e31 87.5%, #2a2e31),
-        linear-gradient(150deg, #2a2e31 12%, transparent 12.5%, transparent 87%, #2a2e31 87.5%, #2a2e31),
-        linear-gradient(30deg, #2a2e31 12%, transparent 12.5%, transparent 87%, #2a2e31 87.5%, #2a2e31),
-        linear-gradient(150deg, #2a2e31 12%, transparent 12.5%, transparent 87%, #2a2e31 87.5%, #2a2e31),
-        linear-gradient(60deg, #2a2e3177 25%, transparent 25.5%, transparent 75%, #2a2e3177 75%, #2a2e3177),
-        linear-gradient(60deg, #2a2e3177 25%, transparent 25.5%, transparent 75%, #2a2e3177 75%, #2a2e3177);
-    background-size: 80px 140px;
-    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    /* Шрифт печатной машинки для стиля */
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
     min-height: 100vh;
@@ -30,196 +24,194 @@ body {
 
 /* === МЕНЮ СЛЕВА === */
 .sidebar {
-    width: 280px;
-    background: var(--retro-teal); /* Бирюзовый фон */
+    width: 260px;
+    background-color: var(--sidebar-bg);
     padding: 30px;
     display: flex;
     flex-direction: column;
-    border-right: 4px solid var(--border-color);
+    border-right: 5px solid var(--accent-red); /* Красная линия разделитель */
     flex-shrink: 0;
     position: fixed;
     height: 100vh;
     overflow-y: auto;
-    color: var(--retro-sand);
 }
 
+/* Логотип */
 .logo {
-    font-family: 'Impact', sans-serif;
-    font-size: 32px;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--paper-color);
     text-transform: uppercase;
-    color: var(--retro-sand);
-    border: 3px solid var(--retro-sand);
+    margin-bottom: 40px;
+    border: 2px solid var(--paper-color);
     padding: 10px;
     text-align: center;
-    margin-bottom: 40px;
-    box-shadow: 5px 5px 0px var(--border-color); /* Жесткая тень */
-    background: var(--retro-red);
-    transform: rotate(-2deg); /* Немного наклоним логотип как наклейку */
+    letter-spacing: 2px;
 }
 
 .nav-section { margin-bottom: 30px; }
 
 .nav-title {
+    color: var(--accent-gold);
+    font-family: sans-serif;
     font-weight: bold;
-    color: var(--retro-sand);
-    border-bottom: 2px dashed var(--retro-sand); /* Пунктирная линия */
-    margin-bottom: 15px;
-    padding-bottom: 5px;
     text-transform: uppercase;
+    margin-bottom: 15px;
+    font-size: 14px;
     letter-spacing: 1px;
 }
 
+/* Кнопки меню */
 .nav-link {
     display: block;
     text-decoration: none;
-    color: var(--bg-dark);
-    background: var(--retro-sand);
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    border: 2px solid var(--border-color);
+    color: #cfd8dc;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
     transition: 0.2s;
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.3); /* Тень кнопок */
+    border-left: 3px solid transparent;
 }
 
 .nav-link:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.3);
-    background: #fff;
+    background-color: rgba(255,255,255,0.05);
+    color: white;
+    padding-left: 20px;
+    border-left: 3px solid var(--accent-gold);
 }
 
 .nav-link.active {
-    background: var(--retro-red);
+    background-color: var(--accent-teal);
     color: white;
+    border-left: 3px solid var(--accent-gold);
 }
+
 
 /* === ОСНОВНОЙ КОНТЕНТ === */
 .main-content {
-    margin-left: 340px; /* Отступ под меню */
+    margin-left: 320px; /* Отступ под меню */
     flex-grow: 1;
-    padding: 40px;
+    padding: 50px;
     max-width: 900px;
 }
 
-/* Баннер загрузки */
+/* Баннер "Загрузка" */
 .hero-banner {
-    background: var(--retro-sand);
-    border: 3px solid var(--border-color);
+    color: var(--paper-color);
+    border: 2px dashed var(--paper-color);
     padding: 40px;
     text-align: center;
-    box-shadow: 10px 10px 0px var(--retro-teal); /* Цветная тень */
-    margin-bottom: 40px;
+    border-radius: 10px;
 }
-.hero-banner h1 { margin-top: 0; color: var(--retro-red); font-family: 'Impact', sans-serif; letter-spacing: 1px;}
 
-/* === КАРТОЧКА С ТЕКСТОМ (Как лист бумаги) === */
+/* === СТИЛЬ "БУМАГИ" (Главная карточка) === */
 .content-card {
-    background-color: var(--retro-sand); /* Песочная бумага */
-    border: 3px solid var(--border-color);
+    background-color: var(--paper-color); /* Тот самый песочный цвет */
     padding: 50px;
-    margin-bottom: 50px;
-    box-shadow: 12px 12px 0px rgba(0,0,0,0.4); /* Жесткая тень */
+    border-radius: 2px;
+    /* Жесткая тень, чтобы казалось что лист лежит на столе */
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.3); 
     position: relative;
+    border: 1px solid #dcd3b8;
 }
 
-/* Эффект "Скрепки" сверху (декоративный элемент) */
+/* Декоративная "скрепка" или скотч сверху */
 .content-card::before {
     content: '';
+    display: block;
+    width: 100px;
+    height: 25px;
+    background-color: rgba(201, 78, 68, 0.6); /* Полупрозрачный красный скотч */
     position: absolute;
-    top: -15px;
+    top: -12px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 30px;
-    background: rgba(0,0,0,0.2); /* Типа скотч */
-    transform: translateX(-50%) rotate(1deg);
+    transform: translateX(-50%) rotate(-2deg);
 }
 
 /* Заголовки */
 h1 {
-    font-family: 'Impact', sans-serif;
-    color: var(--retro-teal);
+    font-family: sans-serif;
+    font-weight: 900;
     text-transform: uppercase;
-    font-size: 2.5em;
-    border-bottom: 4px solid var(--retro-red);
-    display: inline-block;
-    padding-right: 20px;
+    color: var(--accent-teal);
+    border-bottom: 4px solid var(--accent-red);
+    padding-bottom: 10px;
     margin-top: 0;
 }
 
 h2 {
-    background: var(--retro-teal);
-    color: var(--retro-sand);
-    padding: 5px 15px;
+    color: var(--bg-color);
+    background: rgba(0,0,0,0.05);
+    padding: 5px 10px;
     display: inline-block;
-    margin-top: 40px;
-    transform: rotate(-1deg); /* Чуть криво, как наклейка */
-    box-shadow: 3px 3px 0px var(--border-color);
+    border-left: 5px solid var(--accent-teal);
+    margin-top: 30px;
 }
 
 h3 {
-    color: var(--retro-red);
-    border-bottom: 2px dashed var(--retro-red);
-    display: inline-block;
+    color: var(--accent-red);
+    margin-top: 25px;
 }
 
-p {
-    font-size: 1.1em;
+p, li {
+    font-size: 16px;
     line-height: 1.6;
+    color: #333;
 }
 
-/* === КАРТИНКИ (Как фотокарточки) === */
+/* Ссылки в тексте */
+.content-card a {
+    color: var(--accent-red);
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent-red);
+}
+.content-card a:hover {
+    background-color: var(--accent-red);
+    color: white;
+}
+
+/* === КАРТИНКИ (Полароид стиль) === */
 img {
-    max-width: 100%;
+    background: white;
+    padding: 10px 10px 30px 10px; /* Белая рамка снизу толще */
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    transform: rotate(1deg); /* Легкий наклон */
+    max-width: 90%;
     height: auto;
-    border: 3px solid white; /* Белая рамка как у фото */
-    outline: 1px solid var(--border-color); /* Черная обводка снаружи */
-    margin: 15px 0;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+    display: block;
+    margin: 20px 0;
 }
 
 .images-row {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
     margin: 20px 0;
-    background: rgba(0,0,0,0.05); /* Подложка под фото */
-    padding: 15px;
-    border: 1px dashed var(--border-color);
+}
+.images-row img {
+    max-width: 45%;
+    transform: rotate(-1deg);
+}
+.images-row img:nth-child(even) {
+    transform: rotate(1deg);
 }
 
-/* === ВАЖНЫЕ БЛОКИ (Warning) === */
+/* === ВАЖНЫЕ БЛОКИ === */
 .warning, .important {
-    background: #fff;
-    border: 3px solid var(--retro-red) !important;
-    padding: 20px;
+    background-color: #fff;
+    border-left: 6px solid var(--accent-red) !important;
+    padding: 15px;
     margin: 20px 0;
-    box-shadow: 8px 8px 0px var(--retro-red) !important;
-    position: relative;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
 }
 
-/* Ссылки внутри текста */
-.content-card a {
-    color: var(--retro-red);
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 2px solid var(--retro-red);
-}
-.content-card a:hover {
-    background: var(--retro-red);
-    color: white;
-}
-
-/* === МОБИЛЬНАЯ ВЕРСИЯ === */
+/* МОБИЛЬНАЯ ВЕРСИЯ */
 @media (max-width: 768px) {
     body { flex-direction: column; }
-    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 4px solid var(--border-color);}
-    .main-content { margin-left: 0; padding: 15px; }
-    .content-card { padding: 20px; }
-    h1 { font-size: 1.8em; }
+    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 5px solid var(--accent-red); }
+    .main-content { margin-left: 0; padding: 20px; }
+    .content-card { padding: 25px; }
+    .images-row img { max-width: 100%; }
 }
-
-/* Скроллбар (чтобы был красивым) */
-::-webkit-scrollbar { width: 12px; }
-::-webkit-scrollbar-track { background: var(--bg-dark); }
-::-webkit-scrollbar-thumb { background: var(--retro-teal); border: 2px solid var(--bg-dark); }
