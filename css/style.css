@@ -1,217 +1,276 @@
 css
 :root {
-    /* Цвета из твоего референса */
-    --bg-color: #2F3E46;       /* Темный серо-зеленый фон (как на палитре) */
-    --sidebar-bg: #222d33;     /* Чуть темнее для меню */
+    /* ПАЛИТРА: Космос + Скрапбук */
+    --bg-dark: #121420;         /* Очень темный синий фон */
+    --paper-color: #f6f5f1;     /* Светло-кремовая бумага */
     
-    --paper-color: #F2E8C9;    /* Цвет старой бумаги (песочный) */
-    --text-color: #2b2b2b;     /* Темный текст для контраста */
+    --accent-blue: #4361EE;     /* Яркий синий */
+    --accent-cyan: #4CC9F0;     /* Голубой/Бирюзовый */
+    --accent-purple: #7209B7;   /* Фиолетовый */
+    --accent-pink: #F72585;     /* Розовый (для акцентов вместо красного) */
     
-    --accent-red: #C94E44;     /* Ретро красный */
-    --accent-teal: #3E6868;    /* Ретро бирюзовый */
-    --accent-gold: #C1AB85;    /* Золотисто-бежевый */
+    --text-main: #2b2b35;       /* Темный текст (читабельный) */
+    --tape-color: rgba(76, 201, 240, 0.5); /* Полупрозрачный скотч */
 }
 
 body {
     margin: 0;
-    /* Шрифт печатной машинки для стиля */
-    font-family: 'Courier New', Courier, monospace;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    /* ФОН: Точки и звездочки */
+    background-image: 
+        radial-gradient(var(--accent-cyan) 1px, transparent 1px),
+        radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 40px 40px, 10px 10px;
+    background-position: 0 0, 20px 20px;
+    color: var(--text-main);
     display: flex;
     min-height: 100vh;
 }
 
 /* === МЕНЮ СЛЕВА === */
 .sidebar {
-    width: 260px;
-    background-color: var(--sidebar-bg);
+    width: 270px;
+    background-color: #1b1e2f; /* Темно-синяя плашка */
     padding: 30px;
     display: flex;
     flex-direction: column;
-    border-right: 5px solid var(--accent-red); /* Красная линия разделитель */
+    border-right: 4px solid var(--accent-blue);
     flex-shrink: 0;
     position: fixed;
     height: 100vh;
     overflow-y: auto;
+    z-index: 10;
 }
 
-/* Логотип */
+/* Логотип со звездой */
 .logo {
-    font-family: sans-serif;
+    color: var(--accent-cyan);
     font-weight: 900;
-    font-size: 28px;
-    color: var(--paper-color);
+    font-size: 26px;
     text-transform: uppercase;
     margin-bottom: 40px;
-    border: 2px solid var(--paper-color);
-    padding: 10px;
-    text-align: center;
-    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
 }
 
-.nav-section { margin-bottom: 30px; }
+/* 4-конечная звезда (CSS) */
+.star-icon {
+    width: 20px;
+    height: 20px;
+    background: var(--accent-purple);
+    clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
+}
 
 .nav-title {
-    color: var(--accent-gold);
-    font-family: sans-serif;
+    color: var(--accent-purple);
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
     margin-bottom: 15px;
-    font-size: 14px;
-    letter-spacing: 1px;
+    border-bottom: 1px dashed var(--accent-purple);
+    padding-bottom: 5px;
 }
 
-/* Кнопки меню */
 .nav-link {
     display: block;
     text-decoration: none;
-    color: #cfd8dc;
-    padding: 10px 15px;
+    color: #a0a0b0; /* Светло-серый */
+    padding: 12px;
     margin-bottom: 8px;
-    border-radius: 4px;
-    transition: 0.2s;
-    border-left: 3px solid transparent;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+    border: 1px solid transparent;
 }
 
 .nav-link:hover {
-    background-color: rgba(255,255,255,0.05);
-    color: white;
-    padding-left: 20px;
-    border-left: 3px solid var(--accent-gold);
+    background: rgba(67, 97, 238, 0.1);
+    color: var(--accent-cyan);
+    transform: translateX(5px);
+    border: 1px solid var(--accent-blue);
 }
 
 .nav-link.active {
-    background-color: var(--accent-teal);
+    background: var(--accent-blue);
     color: white;
-    border-left: 3px solid var(--accent-gold);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
 }
-
 
 /* === ОСНОВНОЙ КОНТЕНТ === */
 .main-content {
-    margin-left: 320px; /* Отступ под меню */
+    margin-left: 330px;
     flex-grow: 1;
-    padding: 50px;
+    padding: 60px;
     max-width: 900px;
 }
 
-/* Баннер "Загрузка" */
-.hero-banner {
-    color: var(--paper-color);
-    border: 2px dashed var(--paper-color);
-    padding: 40px;
-    text-align: center;
-    border-radius: 10px;
-}
-
-/* === СТИЛЬ "БУМАГИ" (Главная карточка) === */
+/* === ЛИСТ БУМАГИ (ГЛАВНАЯ КАРТОЧКА) === */
 .content-card {
-    background-color: var(--paper-color); /* Тот самый песочный цвет */
-    padding: 50px;
-    border-radius: 2px;
-    /* Жесткая тень, чтобы казалось что лист лежит на столе */
-    box-shadow: 15px 15px 0px rgba(0,0,0,0.3); 
+    background-color: var(--paper-color);
+    padding: 60px;
     position: relative;
-    border: 1px solid #dcd3b8;
+    border-radius: 4px;
+    /* Тень, чтобы лист "летал" */
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.4); 
+    transform: rotate(-1deg); /* Легкий наклон как на референсе */
+    margin-bottom: 50px;
 }
 
-/* Декоративная "скрепка" или скотч сверху */
+/* ДЕКОР: Скотч сверху */
 .content-card::before {
     content: '';
-    display: block;
-    width: 100px;
-    height: 25px;
-    background-color: rgba(201, 78, 68, 0.6); /* Полупрозрачный красный скотч */
     position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-2deg);
+    top: -15px;
+    left: 45%;
+    width: 120px;
+    height: 35px;
+    background: var(--tape-color);
+    transform: rotate(2deg);
+    opacity: 0.8;
+}
+
+/* ДЕКОР: Скрепка сбоку */
+.content-card::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    right: -10px;
+    width: 20px;
+    height: 60px;
+    border: 4px solid var(--accent-pink);
+    border-radius: 20px;
+    z-index: 5;
 }
 
 /* Заголовки */
 h1 {
-    font-family: sans-serif;
-    font-weight: 900;
+    font-family: 'Arial Black', sans-serif;
+    color: var(--accent-blue);
     text-transform: uppercase;
-    color: var(--accent-teal);
-    border-bottom: 4px solid var(--accent-red);
-    padding-bottom: 10px;
+    font-size: 2.2em;
     margin-top: 0;
+    /* Подчеркивание волной */
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--accent-cyan);
+    text-underline-offset: 8px;
 }
 
 h2 {
-    color: var(--bg-color);
-    background: rgba(0,0,0,0.05);
-    padding: 5px 10px;
-    display: inline-block;
-    border-left: 5px solid var(--accent-teal);
-    margin-top: 30px;
-}
-
-h3 {
-    color: var(--accent-red);
-    margin-top: 25px;
-}
-
-p, li {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-}
-
-/* Ссылки в тексте */
-.content-card a {
-    color: var(--accent-red);
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 2px solid var(--accent-red);
-}
-.content-card a:hover {
-    background-color: var(--accent-red);
+    background: var(--accent-blue);
     color: white;
-}
-
-/* === КАРТИНКИ (Полароид стиль) === */
-img {
-    background: white;
-    padding: 10px 10px 30px 10px; /* Белая рамка снизу толще */
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
-    transform: rotate(1deg); /* Легкий наклон */
-    max-width: 90%;
-    height: auto;
-    display: block;
-    margin: 20px 0;
-}
-
-.images-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-.images-row img {
-    max-width: 45%;
-    transform: rotate(-1deg);
-}
-.images-row img:nth-child(even) {
+    padding: 8px 15px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-top: 40px;
+    font-size: 1.2em;
+    box-shadow: 4px 4px 0px var(--accent-purple);
     transform: rotate(1deg);
 }
 
-/* === ВАЖНЫЕ БЛОКИ === */
-.warning, .important {
-    background-color: #fff;
-    border-left: 6px solid var(--accent-red) !important;
-    padding: 15px;
-    margin: 20px 0;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+h3 {
+    color: var(--accent-purple);
+    border-left: 4px solid var(--accent-purple);
+    padding-left: 10px;
+    margin-top: 30px;
 }
 
-/* МОБИЛЬНАЯ ВЕРСИЯ */
+/* Текст и списки */
+p, li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333; /* Исправил серый на темно-серый для читаемости */
+}
+
+/* Ссылки внутри текста */
+.content-card a {
+    color: var(--accent-blue);
+    font-weight: bold;
+    text-decoration: none;
+    background: rgba(76, 201, 240, 0.2); /* Эффект маркера */
+    padding: 0 4px;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+.content-card a:hover {
+    background: var(--accent-cyan);
+    color: #000;
+}
+
+/* === СТИКЕРЫ (Вместо желтых блоков) === */
+/* Блок "Важно" -> Голубой стикер */
+.important {
+    background-color: #e0fbfc;
+    border: 2px dashed var(--accent-cyan) !important;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 25px 0;
+    position: relative;
+    box-shadow: 5px 5px 0px rgba(76, 201, 240, 0.3);
+}
+.important p { color: #2d3e50 !important; }
+
+/* Блок "Внимание" -> Розовый/Фиолетовый стикер */
+.warning {
+    background-color: #fae0e4;
+    border: 2px solid var(--accent-pink) !important;
+    border-radius: 0;
+    padding: 20px;
+    margin: 25px 0;
+    position: relative;
+    box-shadow: 5px 5px 0px var(--accent-pink);
+    transform: rotate(1deg);
+}
+.warning p { color: #590d22 !important; }
+
+/* === КАРТИНКИ === */
+.images-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding: 10px;
+    background: #fff; /* Белая подложка как в фотоальбоме */
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+}
+
+img {
+    border-radius: 6px;
+    border: 2px solid #eee;
+}
+
+/* === ОГЛАВЛЕНИЕ (Исправляем читаемость) === */
+.toc-list a {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: var(--text-main) !important; /* Черный текст */
+    font-weight: 500;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+.toc-list a::before {
+    content: '✦'; /* Звездочка перед пунктом */
+    color: var(--accent-purple);
+    margin-right: 10px;
+}
+.toc-list a:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue) !important;
+    background: #f0f4ff;
+}
+
+/* Мобильная версия */
 @media (max-width: 768px) {
     body { flex-direction: column; }
-    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 5px solid var(--accent-red); }
+    .sidebar { position: relative; width: auto; height: auto; border-right: none; }
     .main-content { margin-left: 0; padding: 20px; }
-    .content-card { padding: 25px; }
-    .images-row img { max-width: 100%; }
+    .content-card { padding: 30px; transform: none; }
 }
