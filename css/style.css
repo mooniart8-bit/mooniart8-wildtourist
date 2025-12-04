@@ -1,32 +1,40 @@
 :root {
-    --c-light-blue: #95A2C5;
-    --c-deep-blue: #435792;
-    --c-peach: #E6B098;
-    --c-salmon: #DE8D78;
-    --c-rust: #C6664E;
-    --text-color: #2a3352;
+    /* ТВОЯ НОВАЯ ПАЛИТРА */
+    --bg-main: #343434;        /* Основной темный фон */
+    --bg-panel: #515151;       /* Фон центральной панели */
+    --card-light: #DCDED0;     /* Светло-бежевый (для текста) */
+    
+    --text-dark: #515153;      /* Темный текст (для светлых карточек) */
+    --text-light: #DCDED0;     /* Светлый текст (для темного фона) */
+    
+    --accent-green: #908E79;   /* Шалфейный зеленый */
+    --accent-green-dark: #7F7C69; /* Темный шалфей (обводки) */
+    --accent-dark-brown: #37342F; /* Очень темный (для меню) */
+    --accent-red: #834645;     /* Приглушенный красный */
 }
 
 body {
     margin: 0;
-    font-family: 'Verdana', sans-serif;
-    background-color: var(--c-light-blue);
-    color: var(--text-color);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-light);
     display: flex;
     min-height: 100vh;
+    
+    /* Декоративные круги на заднем плане (как на референсе) */
     background-image: 
-        linear-gradient(rgba(67, 87, 146, 0.1) 2px, transparent 2px),
-        linear-gradient(90deg, rgba(67, 87, 146, 0.1) 2px, transparent 2px);
-    background-size: 30px 30px;
+        radial-gradient(circle at 10% 20%, #3f3f3f 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, #3f3f3f 0%, transparent 20%);
 }
 
+/* === МЕНЮ СЛЕВА === */
 .sidebar {
-    width: 280px;
-    background-color: var(--c-deep-blue);
+    width: 260px;
+    background-color: var(--accent-dark-brown);
     padding: 30px;
     display: flex;
     flex-direction: column;
-    border-right: 5px solid var(--c-peach);
+    border-right: 4px solid var(--accent-green-dark);
     flex-shrink: 0;
     position: fixed;
     height: 100vh;
@@ -35,245 +43,272 @@ body {
 }
 
 .logo {
-    background: var(--c-peach);
-    color: var(--c-deep-blue);
+    background: var(--card-light);
+    color: var(--accent-dark-brown);
     padding: 15px;
     text-align: center;
     font-weight: 900;
     font-size: 24px;
     text-transform: uppercase;
-    margin-bottom: 30px;
-    border: 3px solid var(--c-rust);
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
-    border-radius: 8px;
+    margin-bottom: 40px;
+    border-radius: 20px; /* Сильное скругление */
+    border: 3px solid var(--accent-green);
+    
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
+/* Звездочка */
 .star-icon {
-    width: 20px;
-    height: 20px;
-    background: var(--c-rust);
+    width: 18px;
+    height: 18px;
+    background: var(--accent-red);
     clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
     display: inline-block;
 }
 
 .nav-title {
-    color: var(--c-peach);
+    color: var(--accent-green);
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1.5px;
+    font-size: 12px;
+    letter-spacing: 2px;
     margin-bottom: 15px;
-    border-bottom: 2px dashed var(--c-peach);
+    border-bottom: 1px solid var(--accent-green-dark);
+    padding-bottom: 5px;
 }
 
+/* Кнопки меню */
 .nav-link {
     display: block;
     text-decoration: none;
-    background: rgba(230, 176, 152, 0.1);
-    color: var(--c-peach);
-    padding: 12px 15px;
+    color: var(--card-light);
+    padding: 12px 18px;
     margin-bottom: 8px;
-    border-radius: 6px;
+    border-radius: 12px;
     transition: 0.2s;
     font-weight: 600;
-    border: 1px solid var(--c-peach);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid transparent;
 }
 
 .nav-link:hover {
-    background: var(--c-peach);
-    color: var(--c-deep-blue);
-    transform: translateX(5px);
+    background: var(--accent-green);
+    color: var(--bg-main);
+    transform: scale(1.02);
 }
 
 .nav-link.active {
-    background: var(--c-salmon);
-    color: #fff;
-    border-color: var(--c-rust);
-    box-shadow: 0 0 10px var(--c-rust);
+    background: var(--accent-red);
+    color: var(--card-light);
+    border: 1px solid var(--card-light);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
+/* === ОСНОВНОЙ КОНТЕНТ === */
 .main-content {
-    margin-left: 330px;
+    margin-left: 300px; /* Отступ под меню */
     flex-grow: 1;
-    padding: 50px;
+    padding: 40px;
     max-width: 950px;
 }
 
+/* === ГЛАВНАЯ ПАНЕЛЬ (Темно-серая подложка) === */
 .content-card {
-    background-color: var(--c-peach);
-    padding: 50px;
-    border-radius: 15px;
-    border: 4px solid var(--c-deep-blue);
-    box-shadow: 15px 15px 0px rgba(67, 87, 146, 0.4);
+    background-color: var(--bg-panel); /* #515151 */
+    padding: 40px;
+    border-radius: 30px; /* Большие скругления как на картинке */
+    border: 5px solid var(--accent-green-dark);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     position: relative;
-    background-image: radial-gradient(var(--c-rust) 1px, transparent 1px);
-    background-size: 20px 20px;
+    
+    /* Декоративные элементы на фоне панели */
+    background-image: radial-gradient(var(--accent-green-dark) 2px, transparent 2px);
+    background-size: 30px 30px;
 }
 
-.content-card::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%) rotate(1deg);
-    width: 150px;
-    height: 30px;
-    background: var(--c-rust);
-    opacity: 0.8;
-    border-radius: 2px;
-}
-
+/* === ЗАГОЛОВКИ === */
 h1 {
-    background: var(--c-deep-blue);
-    color: var(--c-peach);
+    /* Стиль "Облачка" */
+    background: var(--card-light);
+    color: var(--text-dark);
     padding: 20px 30px;
-    font-size: 26px;
-    text-transform: uppercase;
+    border-radius: 20px 20px 20px 0; /* Асимметричное скругление */
+    font-size: 28px;
     margin-top: 0;
-    border-radius: 8px;
-    border: 2px solid var(--c-peach);
-    box-shadow: 6px 6px 0px var(--c-rust);
+    margin-bottom: 30px;
+    border: 3px solid var(--accent-green);
+    
     display: flex;
     align-items: center;
     gap: 15px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
 }
-h1 .star-icon { background: var(--c-peach); }
 
 h2 {
+    /* Стиль зеленой плашки */
     display: inline-block;
-    background: var(--c-salmon);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 18px;
+    background: var(--accent-green);
+    color: var(--card-light); /* Светлый текст */
+    padding: 8px 20px;
+    border-radius: 15px;
+    font-size: 20px;
     margin-top: 40px;
-    margin-bottom: 20px;
-    border: 2px solid var(--c-rust);
-    box-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+    margin-bottom: 15px;
+    border: 2px solid var(--accent-green-dark);
 }
 
 h3 {
-    color: var(--c-rust);
-    border-left: 5px solid var(--c-rust);
+    color: var(--accent-red);
+    border-left: 4px solid var(--accent-red);
     padding-left: 10px;
     margin-top: 30px;
+    font-size: 18px;
 }
 
+/* === ТЕКСТ (В светлых блоках) === */
 p, li {
     font-size: 16px;
-    line-height: 1.7;
-    background: #ffffff;
-    padding: 10px 15px; 
-    border-radius: 8px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(67, 87, 146, 0.2);
-    box-shadow: 3px 3px 0px rgba(67, 87, 146, 0.05);
+    line-height: 1.6;
+    color: var(--text-dark); /* #515153 */
+    
+    /* Светлая подложка #DCDED0 */
+    background: var(--card-light); 
+    
+    padding: 15px;
+    border-radius: 15px; /* Скругленные блоки текста */
+    margin-bottom: 15px;
+    border: 1px solid var(--accent-green-dark);
 }
 
+/* Ссылки внутри текста */
+.content-card a {
+    color: var(--accent-red);
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent-red);
+}
+.content-card a:hover {
+    background: var(--accent-red);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* === ОГЛАВЛЕНИЕ === */
 .toc-list h2 {
     background: transparent;
-    color: var(--c-deep-blue);
+    color: var(--card-light); /* Светлый заголовок на темном фоне */
     border: none;
-    box-shadow: none;
     padding: 0;
-    margin-bottom: 10px;
-    border-bottom: 3px solid var(--c-rust);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-green);
     border-radius: 0;
 }
 
 .toc-list ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
     padding: 0;
 }
 
-.toc-list li { list-style: none; margin: 0; padding: 0; background: none; }
+.toc-list li { list-style: none; margin: 0; padding: 0; background: none; border: none;}
 
 .toc-list a {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: var(--c-light-blue);
-    color: var(--c-deep-blue);
+    /* Кнопки оглавления */
+    background: var(--card-light);
+    color: var(--text-dark);
     text-decoration: none;
     padding: 15px;
     font-weight: 700;
-    border: 2px solid var(--c-deep-blue);
-    border-radius: 8px;
+    border-radius: 15px;
+    border: 2px solid transparent;
     transition: 0.2s;
 }
-.toc-list a::before { content: '✦'; color: var(--c-rust); }
+.toc-list a::before { content: '✦'; color: var(--accent-red); }
 
 .toc-list a:hover {
-    background: var(--c-salmon);
-    color: white;
-    border-color: var(--c-rust);
-    transform: translate(-3px, -3px);
-    box-shadow: 4px 4px 0px var(--c-rust);
+    background: var(--accent-red);
+    color: var(--card-light);
+    border-color: var(--card-light);
+    transform: translateY(-3px);
 }
 
+/* === БЛОКИ ВНИМАНИЯ === */
+/* Important - зеленый стиль */
 .important {
-    background: var(--c-light-blue);
-    border: 2px dashed var(--c-deep-blue) !important;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 25px 0;
-    color: var(--c-deep-blue);
-}
-.important p { background: transparent; }
-
-.warning {
-    background: var(--c-salmon);
-    border: 3px solid var(--c-rust) !important;
-    border-radius: 10px;
+    background: var(--accent-green);
+    border: 2px dashed var(--card-light) !important;
+    border-radius: 20px;
     padding: 20px;
     margin: 25px 0;
     color: white;
-    box-shadow: 5px 5px 0px var(--c-rust);
 }
-.warning p { color: white; background: transparent; }
+.important p { 
+    background: rgba(255,255,255,0.2); 
+    color: white; 
+    border: none;
+}
 
+/* Warning - красный стиль */
+.warning {
+    background: var(--accent-red);
+    border: 3px solid var(--card-light) !important;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 25px 0;
+    color: white;
+}
+.warning p { 
+    background: rgba(255,255,255,0.2); 
+    color: white; 
+    border: none;
+}
+
+/* === КАРТИНКИ === */
 img {
-    border: 4px solid var(--c-deep-blue);
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 15px 0;
-    background: var(--c-light-blue);
-    padding: 5px;
+    /* Двойная рамка: Тонкая светлая + Толстая темная */
+    border: 3px solid var(--card-light);
+    outline: 2px solid var(--accent-green-dark);
 }
 
 .images-row {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    background: rgba(67, 87, 146, 0.1);
+    background: rgba(0,0,0,0.2); /* Затемнение под картинками */
     padding: 15px;
-    border: 2px dashed var(--c-deep-blue);
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 20px 0;
 }
 
+/* Баннер загрузки */
 .hero-banner {
-    background: var(--c-deep-blue);
-    color: var(--c-peach);
+    background: var(--bg-panel);
+    color: var(--card-light);
     padding: 40px;
     text-align: center;
-    border-radius: 10px;
-    border: 2px solid var(--c-salmon);
+    border-radius: 30px;
+    border: 3px solid var(--accent-green);
 }
 
-::-webkit-scrollbar { width: 12px; }
-::-webkit-scrollbar-track { background: var(--c-light-blue); }
-::-webkit-scrollbar-thumb { background: var(--c-deep-blue); border: 2px solid var(--c-light-blue); border-radius: 10px; }
+/* Скроллбар */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: var(--accent-green); border-radius: 10px; }
 
 @media (max-width: 768px) {
     body { flex-direction: column; }
-    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 5px solid var(--c-peach); }
-    .main-content { margin-left: 0; padding: 20px; }
-    .content-card { padding: 25px; }
+    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 4px solid var(--accent-green); }
+    .main-content { margin-left: 0; padding: 15px; }
+    .content-card { padding: 20px; border-width: 3px;}
     .toc-list ul { grid-template-columns: 1fr; }
 }
