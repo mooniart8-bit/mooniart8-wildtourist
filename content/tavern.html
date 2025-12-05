@@ -38,6 +38,14 @@
             <p>Слишком много запросов в минуту. Подождите пару минут и только после делайте повтор генерации/рерольте запрос.</p>
             <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
                 <img src="media/5_to_many_request_1.png" alt="Много запросов 1" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/5_to_many_request_4.png" alt="Много запросов 3" style="max-width: 48%; border-radius: 8px;">
+            </div>
+        </section>
+
+        <section id="per-day" style="margin-bottom: 40px;">
+            <h2>Request Per Day</h2>
+            <p>Вы истратили ежедневный лимит проекта, к которому привязан ключ. Меняйте на другой ключ, который привязан к другому проекту.</p>
+            <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
                 <img src="media/5_to_many_request_2.png" alt="Много запросов 2" style="max-width: 48%; border-radius: 8px;">
             </div>
         </section>
@@ -207,7 +215,7 @@
             <img src="media/8_memory_18.png" alt="Книга Памяти 19">
         </div>
         <p><strong>Чтобы не повторять данные действия в последующие разы, создавайте лорбуки для чата с ботом и сразу же прикрепляете к боту.<br>После нажатия кнопки "Создать воспоминания", будет идти загрузка. Если плашка будет желтая и выдаст ошибку, значит данная модель перегружена или прокси провайдера упал.<br>Если вас устраивает запись, добавляете в лорбук. Если нет - редактируете под себя.</strong></p>
-        <div class="images-row">
+        <div class="images-row" style="flex-direction: column; align-items: center;">
             <img src="media/8_memory_19.png" alt="Книга Памяти 20">
             <img src="media/8_memory_20.png" alt="Книга Памяти 21">
         </div>
@@ -236,71 +244,115 @@
                 <img src="media/10_censered_2.png" alt="Цензура 2" style="max-width: 48%; border-radius: 8px;">
             </div>
             <p style="margin-top: 15px;">Также проверьте не включен ли системный промпт!</p>
-            <img src="media/10_censered_3.png" alt="Системный промпт" style="max-width: 100%; border-radius: 8px;">
+            <div class="images-row">
+                <img src="media/10_censered_3.png" alt="Системный промпт" style="max-width: 100%; border-radius: 8px;">
+            </div>
         </section>
 
         <section id="empty-message" style="margin-bottom: 40px;">
-            <h2>Ошибка «пустое сообщение»</h2>
+            <h2>Candidate text empty | Пустое сообщение </h2>
             <p>Бот присылает пустой блок. Проверьте, не включен ли стриминг текста — <strong>ОН НЕ ДОЛЖЕН БЫТЬ ВКЛЮЧЕН!</strong></p>
             <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <img src="media/image25.png" alt="Пустое сообщение" style="max-width: 100%; border-radius: 8px; margin-bottom: 10px;">
-                <img src="media/image26.png" alt="Настройки стриминга 1" style="max-width: 48%; border-radius: 8px;">
-                <img src="media/image27.png" alt="Настройки стриминга 2" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/10_censered_4.png" alt="Пустое сообщение" style="max-width: 100%; border-radius: 8px; margin-bottom: 10px;">
+                <img src="media/10_censered_5.png" alt="Настройки стриминга 1" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/10_censered_6.png" alt="Настройки стриминга 2" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/10_censered_7.png" alt="Настройки стриминга 2" style="max-width: 48%; border-radius: 8px;">
             </div>
         </section>
 
         <section id="cut-message" style="margin-bottom: 40px;">
-            <h2>Ошибка «обрываются сообщения»</h2>
-            <p>Текст не дописывается. Нужно увеличить макс. длину ответа в настройках.</p>
+            <h2>Ошибка "Обрываются сообщения"</h2>
+            <p>Текст не дописывается. Либо включен стриминг текста, либо нужно увеличить макс. длину ответа в настройках.</p>
             <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <img src="media/image28.png" alt="Обрыв сообщения" style="max-width: 48%; border-radius: 8px;">
-                <img src="media/image29.png" alt="Настройка длины" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/10_censered_7.png" alt="Обрыв сообщения" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/10_censered_8.png" alt="Настройка длины" style="max-width: 48%; border-radius: 8px;">
             </div>
         </section>
 
         <section id="invalid-key" style="margin-bottom: 40px;">
-            <h2>Ошибка «неверный ключ»</h2>
+            <h2>Ошибка "INVALID ARGUMENT"</h2>
             <p>Ваш API ключ недействителен или неправильно вписан.</p>
             <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <img src="media/image30.png" alt="Неверный ключ 1" style="max-width: 48%; border-radius: 8px;">
-                <img src="media/image31.png" alt="Неверный ключ 2" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/11_invalid_1.png" alt="Неверный ключ 1" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/11_invalid_2.png" alt="Неверный ключ 2" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/11_invalid_3.png" alt="Неверный ключ 2" style="max-width: 48%; border-radius: 8px;">
             </div>
-            <p>Если используете официальный ключ Google AI Studio, проверьте статус на сайте (UNAVAILABLE означает бан).</p>
-            <img src="media/image33.png" alt="Статус ключа" style="max-width: 100%; border-radius: 8px;">
+            <p>Если используете официальный ключ Google AI Studio, проверьте статус на сайте (UNAVAILABLE означает БАН КЛЮЧА).</p>
+            <img src="media/11_invalid_4.png" alt="Статус ключа" style="max-width: 100%; border-radius: 8px;">
         </section>
 
         <section id="proxy-quota" style="margin-bottom: 40px;">
-            <h2>Ошибка квоты прокси</h2>
+            <h2>FORBIDDEN | DAILY TOREN EXEEDED</h2>
             <p>Истрачен ежедневный лимит квоты вашего прокси.</p>
             <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <img src="media/image34.png" alt="Квота прокси 1" style="max-width: 48%; border-radius: 8px;">
-                <img src="media/image35.png" alt="Квота прокси 2" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/12_forbidden_1.png" alt="Квота прокси 1" style="max-width: 48%; border-radius: 8px;">
+            </div>
+        </section>
+
+         <section id="proxy-error-keys" style="margin-bottom: 40px;">
+            <h2>Proxy error No keys</h2>
+            <p>Ключ вашего прокси недействителен, либо неверно введен.</p>
+            <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <img src="media/13_proxy_error.png" alt="Квота прокси 1" style="max-width: 48%; border-radius: 8px;">
+            </div>
+        </section>
+
+        <section id="not-found-model" style="margin-bottom: 40px;">
+            <h2> ERROR 404 | Not Found Model</h2>
+            <p>Ключ вашего прокси недействителен, либо неверно введен.</p>
+            <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <img src="media/14_not_found_model.png" alt="Квота прокси 1" style="max-width: 48%; border-radius: 8px;">
+            </div>
+        </section>
+
+         <section id="zapret" style="margin-bottom: 40px;">
+            <h2> Внешние данные отключены | HTML блоки отображаются как код</h2>
+            <p>В пресете иногда бывают html блоки с изображениями. Проверьте данные настройки. ГАЛОЧКИ СТОЯТЬ НЕ ДОЛЖНЫ!</p>
+            <div class="images-row">
+                <img src="media/15_zapret_1.png" alt="Запрет внешних данных 1">
+                <img src="media/15_zapret_2.png" alt="Запрет внешних данных 2">
+                <img src="media/15_zapret_3.png" alt="Запрет внешних данных 3">
+                <img src="media/15_zapret_4.png" alt="Запрет внешних данных 4">
+                <img src="media/15_zapret_5.png" alt="Запрет внешних данных 5">
+                <img src="media/15_zapret_6.png" alt="Запрет внешних данных 6">
             </div>
         </section>
 
         <section id="tavern-wont-load" style="margin-bottom: 40px;">
-            <h2>Ошибка «Не грузится Таверна»</h2>
+            <h2> EADDRINUSE | "Не грузится Таверна"</h2>
             <p>Это значит, что она уже запущена в другой сессии или консоль занята.</p>
             <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <img src="media/image42.png" alt="Ошибка загрузки" style="max-width: 48%; border-radius: 8px;">
-                <img src="media/image43.png" alt="Сессии Termux" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/16_session_1.png" alt="Ошибка загрузки" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/16_session_2.png" alt="Сессии Termux 1" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/16_session_3.png" alt="Сессии Termux 2" style="max-width: 48%; border-radius: 8px;">
             </div>
-            <p><strong>Решение для ПК:</strong> В файле "config.yaml" поменять <code>port: 8000</code> на <code>8001</code>.</p>
-            <p><strong>Решение для Android:</strong> Закрыть лишние сессии в Termux через уведомления (кнопка EXIT).</p>
+            <p><strong>Для андроидов необходимо, чтобы вы разрешили Термуксу отправлять уведомления. И в уведомлениях найти закрыть сессию с помощью «EXIT».</code>.</p>
+            <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <img src="media/16_session_4.png" alt="Ошибка загрузки" style="max-width: 48%; border-radius: 8px;">
+            </div>
+            <div class="important">
+                <p>Если у вас не получается или пишет что порт 8000 занят, тогда проводим такие махинации.<br>ДЛЯ ПК: в терминале вписываем команду <strong>npx kill-port [8000]</strong> Может запустится какой-то процесс, где вам придется подтверждать через Y.<br>ДЛЯ ТЕЛЕФОНОВ (ТОЛЬКО ДЛЯ ANDROID): вводим в Termux команду <strong>kill $(echo $(lsof -t /data/data/com.termux/files/home/SillyTavern))</strong></p>
+            </div>
+            <div class="images-row">
+                <img src="media/17_android_1.png" alt="Ошибка загрузки" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/17_android_2.png" alt="Ошибка загрузки" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/17_android_3.png" alt="Ошибка загрузки" style="max-width: 48%; border-radius: 8px;">
+            </div>
+            <p>Нажимаете <strong>синюю стрелочку,</strong> после чего будет необходимо ввести обычную команду для запуска SillyTavern <strong>cd ~/SillyTavern && bash start.sh</strong></p>
         </section>
 
         <section id="error-503" style="margin-bottom: 40px;">
-            <h2>Ошибка 503 (Перегруз сервера)</h2>
+            <h2> 503 UNAVAILABLE | Перегруз сервера</h2>
             <p>Gemini "лег поспать". Остается только ждать.</p>
-            <img src="media/image47.png" alt="Ошибка 503" style="max-width: 100%; border-radius: 8px;">
+            <img src="media/18_gemini_spit.png" alt="Ошибка 503" style="max-width: 100%; border-radius: 8px;">
         </section>
 
         <section id="preset-error" style="margin-bottom: 40px;">
             <h2>Ошибка «Не импортируется пресет»</h2>
             <p>Вы пытаетесь импортировать его не в том меню. Сверьтесь со скриншотом.</p>
             <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <img src="media/image55.png" alt="Импорт пресета 1" style="max-width: 48%; border-radius: 8px;">
-                <img src="media/image56.png" alt="Импорт пресета 2" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/19_preset_1.png" alt="Импорт пресета 1" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/19_preset_2.png" alt="Импорт пресета 2" style="max-width: 48%; border-radius: 8px;">
             </div>
         </section>
 
