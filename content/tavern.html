@@ -150,30 +150,93 @@
             </div>
     <p><strong>Memory Books | Книга памяти</strong></p>
     <div class="important">
-        <p><strong>ВАЖНО! Версия вашей SillyTavern обязательно должна быть выше 13.1.5</strong></p>
-        <p>Пошаговая инструкция:</p>
+        <p><strong>ВАЖНО! Версия вашей SillyTavern обязательно должна быть выше 13.1.5 Где это посмотреть?</strong></p>
     </div>
-            <div class="images-row">
-        <img src="media/6_quota125k_9.png" alt="Экспорт чата 1" style="width: auto; max-width: 100%;">
-        <img src="media/6_quota125k_10.png" alt="Экспорт чата 2" style="width: auto; max-width: 100%;">
-          </div>
-</section>
+        <div class="images-row">
+            <img src="media/7_version.png" alt="Версия таверны">
+        </div> 
+        
+        <p>Пошаговая инструкция установки и настройки Memory Books:</p>
+
+        <p>Копируем именно эту ссылку (не переходим по ссылку): <strong>https://github.com/aikohanasaki/SillyTavern-MemoryBooks</strong></p>
+        <div class="images-row">
+            <img src="media/8_memory_1.png" alt="Книга Памяти 1">
+            <img src="media/8_memory_2.png" alt="Книга Памяти 2">
+        </div>
+        <p>Должно выйти уведомление, что Memory Books был установлен. После этого перезагрузите страницу (если вы с ПК) или перезайдите в SillyTavern (Termux)<br>Далее пойдут мои личные настройки расширения.</strong></p>
+        <div class="images-row">
+            <img src="media/8_memory_3.png" alt="Книга Памяти 3">
+            <img src="media/8_memory_4.png" alt="Книга Памяти 4">
+        </div>
+        <p><strong>Для Memory Books понадобиться отдельный чистый лорбук, куда будут записываться события вашего чата!<br>По настройкам у меня выставлено, чтобы каждые 20 записей создавалась запись. Выше 50 записей не ставить (выдаст ошибку)</strong></p>
+        <div class="images-row">
+            <img src="media/8_memory_5.png" alt="Книга Памяти 5">
+            <img src="media/8_memory_6.png" alt="Книга Памяти 6">
+        </div>
+        <p><strong>В Memory Books можно выбрать профиль соединения для созданий записей (по дефолту там стоят настройки исходя вашего подключения в SillyTavern).<br>Gemini 2.5 pro не рекомендуется для Memory Books из-за постоянной цензуры. Поэтому покажу как настроить профиль на другого провайдера.</strong></p>
+        <div class="images-row">
+            <img src="media/8_memory_7.png" alt="Книга Памяти 7">
+        </div>
+        <ul>
+            <li><strong>1. Установка выбранного профиля по умолчанию - то есть он будет использоваться на постоянной основе.</li>
+            <li><strong>2. Редактировать текущий выбранный профиль соединения.</li>
+            <li><strong>3. Создания нового профиля соединения.</li>
+        </ul>
+        <p><strong>Нажимаем на "Новый профиль". Конкретно на скринах будет профиль через провайдера Routeway.</strong></p>
+        <div class="images-row">
+            <img src="media/8_memory_8.png" alt="Книга Памяти 8">
+            <img src="media/8_memory_9.png" alt="Книга Памяти 9">
+            <img src="media/8_memory_10.png" alt="Книга Памяти 10">
+        </div>
+        <p><strong>Prompt записей написан на русском языке, а значит и записи будут на русском языке. Если вы роллите на английском, придется отредактировать prompt и перевести его на английский.<br>Также там можно добавить свой промпт для создания записей.</strong></p>
+        <div class="images-row">
+            <img src="media/8_memory_11.png" alt="Книга Памяти 11">
+            <img src="media/8_memory_12.png" alt="Книга Памяти 12">
+            <img src="media/8_memory_13.png" alt="Книга Памяти 13">
+            <img src="media/8_memory_13_1.png" alt="Книга Памяти 14">
+        </div>
+        <p><strong>Далее данный Memory Books необходимо прикрепить к лорбуку чата вашего выбранного бота. Обращаю внимание, если вы делаете ветку или чекпоинт, Memory Books надо переключить на другой.</strong></p>
+        <div class="images-row">
+            <img src="media/8_memory_14.png" alt="Книга Памяти 15">
+            <img src="media/8_memory_15.png" alt="Книга Памяти 16">
+        </div>
+        <p><strong>Далее делаем отметку сцен согласно выбранных количество записей (в моем случае 20).</strong></p>
+         <div class="images-row">
+            <img src="media/8_memory_16.png" alt="Книга Памяти 17">
+            <img src="media/8_memory_17.png" alt="Книга Памяти 18">
+            <img src="media/8_memory_18.png" alt="Книга Памяти 19">
+        </div>
+        <p><strong>Чтобы не повторять данные действия в последующие разы, создавайте лорбуки для чата с ботом и сразу же прикрепляете к боту.<br>После нажатия кнопки "Создать воспоминания", будет идти загрузка. Если плашка будет желтая и выдаст ошибку, значит данная модель перегружена или прокси провайдера упал.<br>Если вас устраивает запись, добавляете в лорбук. Если нет - редактируете под себя.</strong></p>
+        <div class="images-row">
+            <img src="media/8_memory_19.png" alt="Книга Памяти 20">
+            <img src="media/8_memory_20.png" alt="Книга Памяти 21">
+        </div>
+            <div class="important">
+        <p><strong>Какого провайдера прокси выбирать? Выбирайте того, у которого модели бесплатные и что не является вашим основным API.</strong></p>
+                <ul>
+            <li><strong>Routeway</li>
+            <li><strong>MegaLLM</li>
+            <li><strong>ELECTRON HUB (не советую, очень маленький контекст у моделей, но маленьких постов подойдет)</li>
+            <li><strong>OpenRouter</li>
+                </ul>
+            </div>
+        </section>
 
         <section id="quota-3m" style="margin-bottom: 40px;">
-            <h2>Ошибка квоты 3 млн</h2>
-            <p>Вы истратили ежедневный лимит. Ждать обновления лимита в полночь по тихоокеанскому времени (11 часов утра по МСК) или <a href="https://t.me/Trigger_Tourist/370" target="_blank" style="color: var(--accent-blue);">меняйте ключ</a>.</p>
-            <img src="media/image21.png" alt="Квота 3млн" style="max-width: 100%; border-radius: 8px;">
+            <h2>Quota Value 3 000 000 | Ошибка квоты 3 000 000</h2>
+            <p>Вы истратили ежедневный лимит контекста модели. Ждать обновления лимита в полночь по тихоокеанскому времени (11 часов утра по МСК) или меняйте ключ</a>.</p>
+            <img src="media/9_3ml.png" alt="Квота 3млн" style="max-width: 100%; border-radius: 8px;">
         </section>
 
         <section id="censorship-tavern" style="margin-bottom: 40px;">
-            <h2>Ошибка «цензура!»</h2>
-            <p>Если у вас не стоит специальный пресет, будет вылезать такая ошибка. Помогает рерол или установка пресета.</p>
+            <h2>Ошибка "PROHIBITED CONTENT" | "ПОХАБНЫЙ КОНТЕНТ"</h2>
+            <p>Происходит из-за непристойного контекста, либо был триггер слово в сообщении. <br>Если у вас не стоит специальный пресет, будет вылезать такая ошибка. Либо выбирайте модель (например DeepSeek), либо устанавливайте пресеты.</p>
             <div class="images-row" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <img src="media/image22.jpeg" alt="Цензура 1" style="max-width: 48%; border-radius: 8px;">
-                <img src="media/image23.png" alt="Цензура 2" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/10_censered_1.png" alt="Цензура 1" style="max-width: 48%; border-radius: 8px;">
+                <img src="media/10_censered_2.png" alt="Цензура 2" style="max-width: 48%; border-radius: 8px;">
             </div>
             <p style="margin-top: 15px;">Также проверьте не включен ли системный промпт!</p>
-            <img src="media/image24.png" alt="Системный промпт" style="max-width: 100%; border-radius: 8px;">
+            <img src="media/10_censered_3.png" alt="Системный промпт" style="max-width: 100%; border-radius: 8px;">
         </section>
 
         <section id="empty-message" style="margin-bottom: 40px;">
