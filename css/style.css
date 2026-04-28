@@ -256,11 +256,14 @@ p {
 
 /* === КАРТИНКИ === */
 img {
+    max-width: 100%;
+    height: auto; /* Сохраняет оригинальные пропорции */
+    object-fit: contain; /* Предотвращает искажение */
     border-radius: 8px;
     border: 3px solid var(--border-dark);
     margin: 15px 0;
     box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
-    max-width: 100%; /* Чтобы картинки не вылезали */
+    display: block;
 }
 
 .images-row {
