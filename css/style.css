@@ -145,19 +145,23 @@ h3 {
     font-size: 16px;
 }
 
-/* === МИНИ-БЛОКИ (Текст) === */
+/* ЧИСТЫЙ ТЕКСТ - НОВЫЙ ВАРИАНТ */
 p {
-    font-size: 15px;
-    line-height: 1.6;
-    background-color: var(--block-bg); /* #98A7C4 */
-    color: var(--text-inside);         /* #1A232C */
-    font-weight: 500;
-    
-    border: 2px solid var(--border-dark);
-    padding: 15px;
-    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-white); /* Белый текст на синем фоне для легкости чтения */
     margin-bottom: 15px;
-    box-shadow: 4px 4px 0px rgba(26, 35, 44, 0.5);
+    /* Убраны тяжелые рамки, фоны и тени */
+}
+
+/* Если вам нужен выделенный блок для текста, используйте отдельный класс */
+.text-box {
+    background-color: var(--block-bg);
+    color: var(--text-inside);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-dark);
+    margin-bottom: 20px;
 }
 
 /* Ссылки внутри текста */
