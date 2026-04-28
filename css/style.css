@@ -224,11 +224,12 @@ p {
     word-break: break-word; /* Предотвращает вылезание длинных слов за границы */
 }
 
-.toc-list a:hover {
-    background: var(--text-white);
-    color: var(--text-inside); /* Принудительно возвращаем темный цвет текста */
+.content-card .toc-list a:hover {
+    background: var(--text-white) !important;
+    color: var(--text-inside) !important; /* Принудительно задаем темный цвет, перебивая любые другие правила */
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px rgba(26, 35, 44, 0.8);
+    text-decoration: none; /* Убираем подчеркивание при наведении, если оно появляется */
 }
 
 /* === БЛОКИ ВНИМАНИЯ === */
