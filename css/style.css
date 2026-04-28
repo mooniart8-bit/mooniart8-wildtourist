@@ -190,26 +190,31 @@ p {
 
 .toc-list ul {
     display: grid;
-    /* Блоки оглавления автоматически заполняют ширину */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Уменьшен минимальный размер до 250px, чтобы блоки лучше помещались */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
     padding: 0;
+    align-items: stretch; /* Заставляет все блоки в одной строке быть равными по высоте */
 }
 
-.toc-list li { list-style: none; margin: 0; padding: 0; background: none; border: none; box-shadow: none; }
-
 .toc-list a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Растягивает кнопку на всю доступную высоту ячейки */
+    min-height: 60px; /* Защита от полного схлопывания */
     background: var(--block-bg);
     color: var(--text-inside);
     text-decoration: none;
-    padding: 15px;
+    padding: 10px 15px;
     border-radius: 8px;
     font-weight: bold;
     transition: 0.2s;
     border: 2px solid var(--border-dark);
     box-shadow: 4px 4px 0px rgba(26, 35, 44, 0.5);
     text-align: center;
+    line-height: 1.3;
+    word-break: break-word; /* Предотвращает вылезание длинных слов за границы */
 }
 
 .toc-list a:hover {
