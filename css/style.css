@@ -225,8 +225,16 @@ p {
     border-radius: 8px;
     padding: 15px;
     margin: 20px 0;
+    color: var(--text-inside); /* Темный текст для светлого фона */
 }
-.important p { background: transparent; border: none; box-shadow: none; padding: 0; margin: 0; }
+.important p {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    color: var(--text-inside); /* Принудительно меняем цвет абзаца */
+}
 
 .warning {
     background: #dcaaaa;
@@ -235,8 +243,16 @@ p {
     padding: 15px;
     margin: 20px 0;
     box-shadow: 4px 4px 0px var(--border-dark);
+    color: var(--text-inside); /* Темный текст для светлого фона */
 }
-.warning p { background: transparent; border: none; box-shadow: none; padding: 0; margin: 0; }
+.warning p {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    color: var(--text-inside); /* Принудительно меняем цвет абзаца */
+}
 
 /* === КАРТИНКИ === */
 img {
