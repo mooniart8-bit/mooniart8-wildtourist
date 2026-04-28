@@ -254,16 +254,21 @@ p {
     color: var(--text-inside); /* Принудительно меняем цвет абзаца */
 }
 
-/* === КАРТИНКИ === */
-img {
-    max-width: 100%;
-    height: auto; /* Сохраняет оригинальные пропорции */
-    object-fit: contain; /* Предотвращает искажение */
+.images-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 15px;
+    background: rgba(0,0,0,0.2);
     border-radius: 8px;
-    border: 3px solid var(--border-dark);
-    margin: 15px 0;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
-    display: block;
+    border: 2px dashed var(--block-bg);
+    margin: 20px 0;
+    align-items: flex-start; /* ПРЕДОТВРАЩАЕТ ИСКАЖЕНИЕ И РАСТЯГИВАНИЕ */
+}
+
+.images-row img {
+    max-width: 100%;
+    flex: 0 1 auto; /* Запрещает флексу ломать пропорции картинки */
 }
 
 .images-row {
