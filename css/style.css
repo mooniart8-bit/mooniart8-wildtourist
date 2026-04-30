@@ -349,4 +349,12 @@ p {
     .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 4px solid var(--bg-main); }
     .main-content { margin-left: 0; padding: 15px; width: 100%; }
     .toc-list ul { grid-template-columns: 1fr; }
+
+    /* === ИСПРАВЛЕНИЕ ДЛЯ КАРТИНОК === */
+    .content-card img {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 10px 0 !important; /* Уменьшаем отступы для компактности на телефоне */
+    }
 }
