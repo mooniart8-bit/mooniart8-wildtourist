@@ -80,7 +80,7 @@ body {
     transition: 0.2s;
     font-weight: 600;
     border: 1px solid transparent;
-    font-size: 14px;
+    font-size: 16px; /* Увеличено с 14px */
 }
 
 .nav-link:hover {
@@ -145,16 +145,14 @@ h3 {
     font-size: 16px;
 }
 
-/* ЧИСТЫЙ ТЕКСТ - НОВЫЙ ВАРИАНТ */
+/* ЧИСТЫЙ ТЕКСТ */
 p {
-    font-size: 16px;
+    font-size: 18px; /* Увеличено для читабельности */
     line-height: 1.7;
-    color: var(--text-white); /* Белый текст на синем фоне для легкости чтения */
+    color: var(--text-white);
     margin-bottom: 15px;
-    /* Убраны тяжелые рамки, фоны и тени */
 }
 
-/* Если вам нужен выделенный блок для текста, используйте отдельный класс */
 .text-box {
     background-color: var(--block-bg);
     color: var(--text-inside);
@@ -162,6 +160,8 @@ p {
     border-radius: 8px;
     border: 1px solid var(--border-dark);
     margin-bottom: 20px;
+    font-size: 18px; /* Принудительно увеличиваем текст внутри блоков */
+    line-height: 1.7;
 }
 
 /* Ссылки внутри текста */
@@ -239,7 +239,8 @@ p {
     border-radius: 8px;
     padding: 15px;
     margin: 20px 0;
-    color: var(--text-inside); /* Темный текст для светлого фона */
+    color: var(--text-inside);
+    font-size: 18px; /* Увеличено */
 }
 .important p {
     background: transparent;
@@ -257,7 +258,8 @@ p {
     padding: 15px;
     margin: 20px 0;
     box-shadow: 4px 4px 0px var(--border-dark);
-    color: var(--text-inside); /* Темный текст для светлого фона */
+    color: var(--text-inside);
+    font-size: 18px; /* Увеличено */
 }
 .warning p {
     background: transparent;
