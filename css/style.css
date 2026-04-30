@@ -317,6 +317,31 @@ p {
 ::-webkit-scrollbar-track { background: var(--border-dark); }
 ::-webkit-scrollbar-thumb { background: var(--block-bg); border: 2px solid var(--border-dark); border-radius: 5px; }
 
+/* === КЛИКАБЕЛЬНЫЙ ТЕКСТ ДЛЯ КОПИРОВАНИЯ === */
+.copyable {
+    cursor: pointer;
+    background: rgba(26, 35, 44, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px dashed var(--border-dark);
+    transition: all 0.2s ease;
+    display: inline-block;
+    font-family: monospace; /* Моноширинный шрифт для команд/кода */
+}
+
+.copyable:hover {
+    background: var(--border-dark);
+    color: var(--text-white);
+    transform: scale(1.02);
+}
+
+.copyable.copied {
+    background: #4caf50; /* Зеленый фон при успешном копировании */
+    color: white;
+    border-color: #4caf50;
+    pointer-events: none; /* Защита от двойного клика */
+}
+
 /* МОБИЛЬНАЯ ВЕРСИЯ */
 @media (max-width: 800px) {
     body { flex-direction: column; }
