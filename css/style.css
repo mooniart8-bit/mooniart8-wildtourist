@@ -317,7 +317,6 @@ p {
 ::-webkit-scrollbar-track { background: var(--border-dark); }
 ::-webkit-scrollbar-thumb { background: var(--block-bg); border: 2px solid var(--border-dark); border-radius: 5px; }
 
-/* === КЛИКАБЕЛЬНЫЙ ТЕКСТ ДЛЯ КОПИРОВАНИЯ === */
 .copyable {
     cursor: pointer;
     background: rgba(26, 35, 44, 0.1);
