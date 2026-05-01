@@ -2,17 +2,91 @@
     <h1>Установка SillyTavern на Android</h1>
 
     <div class="warning">
-        <strong>ВНИМАНИЕ:</strong> Для установки на Android мы используем приложение Termux. Скачивайте его только с F-Droid или Github, версия из Google Play не поддерживается!
+        <strong>ВНИМАНИЕ:</strong> Для установки на Android мы используем приложение Termux. Скачивайте его только с F-Droid или Github, версия из Google Play не поддерживается!<br>
+        Делаем все исключительно под VPN!
     </div>
 
-    <h2>Шаг 1: Скачивание с F-Droid или Github.</h2>
+    <h2>Установка с помощью официальной документации. Скачивание с F-Droid или Github.</h2>
     <p><a href="https://f-droid.org/en/packages/com.termux/" target="_blank">скачать с F-Droid</a></p><br>
     <img src="media/29_ustanovka_android_1.png" alt="Установка термукс1" style="max-width: 30%;">
+
+    <h2>Следуем строго официальной документации.</h2>
+    <p><a href="https://docs.sillytavern.app/installation/android-(termux)/" target="_blank">Официальная документация SillyTavern</a></p><br>
     <div class="text-box">
-        <code>pkg update && pkg upgrade -y</code><br>
-        <code>pkg install git nodejs -y</code>
+        1. Вставляем команду - <span class="copyable">termux-change-repo</span>. Там где у вас символ "$", зажимаете пальцем, чтобы высветилось меню и нажимаете <span class="text-red">"Paste"</span> - это вставка команды.<br>
+        <img src="media/29_ustanovka_android_2.png" alt="Установка термукс2" style="max-width: 30%;">
+        <br> 2. Выбираем зеркало.
+        <img src="media/29_ustanovka_android_3.png" alt="Установка термукс3" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_4.png" alt="Установка термукс4" style="max-width: 30%;">
+        <br> 3. Когда закончится загрузка зеркала, вставляете следующую команду - <span class="copyable">pkg update && pkg upgrade</span><br>
+        <img src="media/29_ustanovka_android_5.png" alt="Установка термукс5" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_6.png" alt="Установка термукс6" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_7.png" alt="Установка термукс7" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_8.png" alt="Установка термукс8" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_9.png" alt="Установка термукс9" style="max-width: 30%;">
+        <br> 4. Когда закончится, то вставляем следующую команду - <span class="copyable">pkg install git nodejs-lts nano</span><br>
+        <img src="media/29_ustanovka_android_10.png" alt="Установка термукс10" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_11.png" alt="Установка термукс11" style="max-width: 30%;">
+        <br> 5. Когда закончится, то вставляем следующую команду - <span class="copyable">git clone https://github.com/SillyTavern/SillyTavern -b release</span><br>
+        <img src="media/29_ustanovka_android_12.png" alt="Установка термукс12" style="max-width: 30%;">
+        <br> 6. Когда закончится, то вставляем следующую команду - <span class="copyable">nano ~/.bashrc</span><br>
+        <img src="media/29_ustanovka_android_13.png" alt="Установка термукс13" style="max-width: 30%;">
+        <br> 7. У вас откроется страшная консолька, не пугаемся ее. Вставляем следующее: <br><span class="copyable"># Update Termux packages
+alias pkgup="pkg update && pkg upgrade"
+#Start SillyTavern
+alias st='cd ~/SillyTavern && bash start.sh'
+# Update SillyTavern
+alias stup='cd ~/SillyTavern && git pull --rebase --autostash'</span><br>
+        <img src="media/29_ustanovka_android_14.png" alt="Установка термукс14" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_15.png" alt="Установка термукс15" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_16.png" alt="Установка термукс16" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_17.png" alt="Установка термукс17" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_18.png" alt="Установка термукс18" style="max-width: 30%;">
+        <br> 8. Когда закончится, то вставляем следующую команду - <span class="copyable">nano ~/.bashrc</span> и нажимаете Enter. После вы сможете запускать таверну через команду <strong>"st"</strong><br>
+        <img src="media/29_ustanovka_android_19.png" alt="Установка термукс19" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_20.png" alt="Установка термукс18" style="max-width: 30%;">
+
+    <br><div class="important">
+        <strong>ВАЖНО:</strong> Загрузка будет долгая. После будет открываться в браузере. Предпочтительно выбирать Google или Mozilla Firefox (они должны стоять по умолчанию, чтобы открывать таверну в этих браузерах).
+    </div>
     </div>
 
-    <h2>Шаг 2: Клонирование репозитория и запуск</h2>
-    <p>Здесь будет текст с командами клонирования GitHub репозитория и запуском `bash start.sh`.</p>
+    <h2>SillyTavern за одну минуту. Как работает?</h2>
+    <p><a href="https://t.me/Trigger_Tourist/455" target="_blank">Termux и команда установка.</a></p><br>
+    <div class="important">
+        <strong>ВАЖНО:</strong> Termux строго тот файл, который указан в посте. С другой версией Termux работать не будет.
+    </div>
+    <div class="text-box">
+        1. После скачивания и установки Termux.apk из поста, вставляете команду - <span class="copyable">pkg update -y && apt upgrade -y -o Dpkg::Options::="--force-confold" && pkg install git nodejs -y && git clone https://github.com/SillyTavern/SillyTavern && cd SillyTavern && bash start.sh</span><br>
+        <img src="media/29_ustanovka_android_21.png" alt="Установка термукс21" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_22.png" alt="Установка термукс22" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_23.png" alt="Установка термукс23" style="max-width: 30%;">
+    <br>2. Дальнейший запуск строго через команду - <span class="copyable">SillyTavern/start.sh</span>
+    </div>
+
+    <div class="warning">
+        <strong>ВАЖНО:</strong> Для установки на Android мы используем приложение Termux. Скачивайте его только с F-Droid или Github, версия из Google Play не поддерживается!<br>
+        Делаем все исключительно под VPN!
+    </div>
+
+        <h2>SillyTavern через ST-android.</h2>
+        <div class="important">
+        <strong>Огромное спасибо тгк <a href="https://t.me/btwiusesillytavern" target="_blank">Гайды от Макса | SillyTavern</a> за интересный находку.</strong> Основной пост тут - <a href="https://t.me/btwiusesillytavern/82?single" target="_blank">Пост об ST</a>
+    </div>
+    <div class="text-box">
+        1. Переходим на GitHuib - <a href="https://github.com/Sanitised/ST-android?tab=readme-ov-file#importing-data-from-sillytavern-on-termuxpc" target="_blank">ST-android</a><br>
+        2. Листаем вниз и выбираем <span class="text-red">"Releases"</span>, затем скачиваем файл - <span class="text-red">ST-android-0.4.0.apk</span> и устанавливаем.<br>
+        <img src="media/29_ustanovka_android_25.png" alt="Установка термукс25" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_26.png" alt="Установка термукс26" style="max-width: 30%;">
+        <br>3. Перед открытием ST, необходимо приложению дать разрешение на фоновый режим и снять ограничение на энергосбережение.<br>
+        <br>4. Далее у вас всплывет прашка. Кликаете <span class="text-red">"Разрешить".</span><br>
+        <img src="media/29_ustanovka_android_27.png" alt="Установка термукс27" style="max-width: 30%;">
+        <br>5. Далее у вас будет еще плашка. Кликаете <span class="text-red">"Set и Пропустить".</span><br>
+        <img src="media/29_ustanovka_android_28.png" alt="Установка термукс28" style="max-width: 30%;">
+        <br><img src="media/29_ustanovka_android_29.png" alt="Установка термукс29" style="max-width: 30%;">
+        <br>6. Переходим к установке. Кликаем <span class="text-red">"Manage ST".</span><br>
+        <img src="media/29_ustanovka_android_30.png" alt="Установка термукс30" style="max-width: 30%;">
+        <br>7. Дальше кликаем <span class="text-red">"Load Branches and Tags" и выбираем ту версию, что указана в скрине. Устанавливаем ее.</span><br>
+        <img src="media/29_ustanovka_android_30.png" alt="Установка термукс30" style="max-width: 30%;">
+    </div>
 </div>
